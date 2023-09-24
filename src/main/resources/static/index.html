@@ -1,11 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+            --font-size: 18px;
+            --icon-color: #858585;
+            font-size: calc(var(--font-size) * 430 / 390);
+            overflow: scroll;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #000000;
+            height: 100vh;
+        }
+
+        .mcard-view {
+            text-align: center;
+            font-family: "MaruBuri-Light", sans-serif;
+            background-color: White;
+            padding: 0;
+            margin: auto;
+            max-width: 430px;
+            line-height: 2rem;
+        }
+
+        @font-face {
+            font-family: 'MaruBuri-Light';
+            src: url('./fonts/MaruBuri-Light.ttf')
+        }
+
+        /* 여기가 mcard intro */
+        .mcard-intro {
+            margin: 0 0 40px;
+        }
+
+        .photo {
+            max-width: 430px;
+            object-fit: cover;
+        }
+
+        .name-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5rem;
+            padding: 0 24px;
+            padding-top: 0px;
+            padding-right: 24px;
+            padding-bottom: 0px;
+            padding-left: 24px;
+        }
+
+        .divider {
+            font-size: 1.2rem;
+        }
+
+        /* 신랑,신부 이름에 붙은 css */
+        .name {
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        .bride,
+        .groom {
+            flex: 999;
+        }
+
+        .name-wrap,
+        .date-place {
+            padding: 20px 0;
+        }
+
+        .date {
+            font-size: .9rem;
+            letter-spacing: 2px;
+            line-height: 1rem;
+            font-family: Crimson Pro;
+        }
+
+        .place {
+            line-height: 1.6rem;
+            margin-top: 0.4rem;
+        }
+
+        /* mcard-intro */
+
+        /* word */
+        .word {
+            font-size: 0.9rem;
+            letter-spacing: normal;
+        }
+
+        .paragraph-wrap {
+            margin: 1px 0;
+            padding: 40px 0;
+        }
+
+        .paragraph-wrap .title {
+            margin-bottom: 40px;
+        }
+
+        .paragraph-wrap .circle {
+            display: inline-block;
+            margin: 0 1px;
+            width: 0.3rem;
+            height: 0.3rem;
+            background: var(--icon-color);
+            transform: rotate(45deg);
+            opacity: .21;
+            vertical-align: middle;
+        }
+
+        .paragraph-wrap .text {
+            margin: 20px 1rem 0;
+            font-size: .9rem;
+        }
+        /* word */
+
+        /* greeting-wrap */
+        .greeting-wrap{
+            padding: 40px 0;
+        }
+        /* greeting-wrap */
+
+        /* animation */
+        .to-fade-in {
+            visibility: hidden;
+        }
+
+        /* text sliding up animation */
+        .fade-in {
+            visibility: visible;
+            animation-name: fade-in;
+            animation-duration: 1s;
+        }
+
+
+
+
+        /* this is for chrome */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* this is for safari */
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
     <meta charset="UTF-8">
     <title>이강민 ♥ 이지혜 결혼합니다</title>
 </head>
+
 <body>
+    <div class="mcard-view">
+        <div class="mcard-intro">
+            <div>
+                <img class="photo" src="images/main_photo.jpeg" />
+            </div>
+            <div class="name-wrap">
+                <div class="groom">
+                    <span class="name">이강민</span>
+                </div>
+                <div class="divider">
+                    <div>06</div>
+                    <hr />
+                    <div>01</div>
+                </div>
+                <div class="bride">
+                    <span class="name">이지혜</span>
+                </div>
 
+            </div>
+            <div class="date-place">
+                <div class="date">2024.06.01 SAT. 12:30 PM</div>
+                <div class="place">한국기독교연합회관 3층 아가페홀</div>
+            </div>
+        </div>
+        <div class="word">
+            <div class="paragraph-wrap">
+                <div class="title to-fade-in">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <div class="text to-fade-in">
+                    그러므로 사람이 부모를 떠나<br>
+                    그의 아내와 합하여<br> 그 둘이 한 육체가 될지니<br>
+                    이 비밀이 크도다 <br>
+                    나는 그리스도와 교회에 대하여 말하노라 <br><br>
+                    에베소서 5 : 31~32
+                </div>
 
+            </div>
+
+        </div>
+        <div class="greeting-wrap">
+            <div class="to-fade-in">
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // This code is related when the animation would be occured.
+        const options = {
+            root: null, // viewport
+            rootMargin: "0px",
+            threshold: 1.0,
+            // How much the element shows on the screen. 
+            // In this case 100%. You can change this value.
+        }
+
+        const upwardObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, options);
+
+        // Adhere "slideUp" class to the all elements which haved class named "slideUp".
+        const slideUpList = document.querySelectorAll('.to-fade-in');
+
+        slideUpList.forEach(el => upwardObserver.observe(el));
+    </script>
 </body>
+
 </html>
