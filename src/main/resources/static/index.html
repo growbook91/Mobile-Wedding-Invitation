@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         html {
-            --font-size: 18px;
+            /* global css var */
+            --img-blur: 0px;
+            --text-color: #544f4f;
+            --text-dark-color: #2b2222;
+            --text-light-color: #797979;
+            --title-text-color: #111;
+            --subtitle-text-color: #111;
             --icon-color: #858585;
+            --border-size: 1px;
+            --border-color: #ddd;
+            --border-light-color: #ebebeb;
+            --border-dark-color: #ebebeb;
+            --wave-color: #fff;
+            --primary-bg-color: #fff;
+            --secondary-bg-color: #f9f9f9;
+            --third-bg-color: #f9f9f9;
+            --fourth-bg-color: #fff;
+            --footer-bg-color: #f6f6f6;
+            --margin-bg-color: #333;
+            --btn-bg-color: rgba(0, 0, 0, 0);
+            --btn-text-color: #404040;
+            --btn-border-color: #878787;
+            --btn-dark-bg-color: #f9f9f9;
+            --btn-dark-text-color: #111;
+            --btn-dark-border-color: #eaeaea;
+            --font-size: 18px;
+            --common-margin-lr: 2rem;
+            --calendar-margin-lr: 3rem;
+            /* --font-regular: IropkeBatangM; */
+            --font-regular-spacing: 0;
+            /* --font-gothic: Pretendard Variable; */
+            --font-gothic-spacing: -0.2px;
+            /* --font-bold: IropkeBatangM; */
+            --font-bold-weight: bold;
+
             font-size: calc(var(--font-size) * 430 / 390);
             overflow: scroll;
         }
@@ -31,6 +64,11 @@
         @font-face {
             font-family: 'MaruBuri-Light';
             src: url('./fonts/MaruBuri-Light.ttf')
+        }
+
+        @font-face {
+            font-family: 'Crimson-Pro';
+            src: url('./fonts/CrimsonPro-Regular.ttf')
         }
 
         /* 여기가 mcard intro */
@@ -75,14 +113,14 @@
             padding: 20px 0;
         }
 
-        .date {
+        .mcard-intro .date {
             font-size: .9rem;
             letter-spacing: 2px;
             line-height: 1rem;
-            font-family: Crimson Pro;
+            font-family: 'Crimson-Pro';
         }
 
-        .place {
+        .mcard-intro .place {
             line-height: 1.6rem;
             margin-top: 0.4rem;
         }
@@ -168,7 +206,82 @@
             padding: 30px 0;
         }
 
-        
+        .calendar-inner {
+            padding: 2.6rem 0 3rem;
+            color: var(--text-color);
+            background: var(--secondary-bg-color);
+            border: var(--border-size) solid var(--border-light-color);
+            border-left: 0;
+            border-right: 0;
+        }
+
+
+        .calendar-wrap .date {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            color: var(--subtitle-text-color);
+            letter-spacing: 1px;
+            font-family: 'Crimson-Pro';
+            opacity: .8;
+        }
+
+        .calendar-wrap .time {
+            font-size: .9rem;
+        }
+
+        .calendar {
+            padding: 0 10px;
+            margin: 2rem var(--calendar-margin-lr);
+            border: 1px solid var(--border-color);
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .calendar-table {
+            line-height: 1.8rem;
+            margin: auto;
+            width: 100%;
+            font-size: .875rem;
+            padding: 1.5rem 0;
+            border-collapse: separate;
+            text-indent: initial;
+            border-spacing: 2px;
+        }
+
+        .calendar-table>tbody tr td:first-child,
+        .calendar-table>thead tr th:first-child {
+            color: #c6472b !important;
+        }
+
+        td {
+            display: table-cell;
+            vertical-align: inherit;
+        }
+
+        .calendar-Dday {
+            color: #fff;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .calendar-Dday>div {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 30px;
+            background: var(--icon-color);
+        }
+
         /* calendar-wrap */
 
         /* animation */
@@ -257,42 +370,128 @@
 
         </div>
         <div class="greeting-wrap">
-            <div class="to-fade-in">
-                <!--div 4개로 나누기-->
-                <div class="text-box1"><!--글귀 1-->
-                    소중한 분들을 초대합니다
+
+            <!--div 4개로 나누기-->
+            <div class="text-box1 to-fade-in"><!--글귀 1-->
+                소중한 분들을 초대합니다
+            </div>
+
+            <div class="text-box2 to-fade-in"><!--글귀 2-->
+                살랑이는 바람결에 <br>
+                사랑이 묻어나는 계절입니다. <br>
+                여기 곱고 예쁜 두 사람이 <span class="font-brown">사랑</span>을 맺어 <br>
+                인생의 반려자가 되려 합니다. <br>
+                새 인생을 시작하는 이 자리에 오셔서 <br>
+                <span class="font-brown">축복</span>해 주시면 감사하겠습니다. <br>
+            </div>
+
+            <div class="photo-div-box to-fade-in"><!--사진 1-->
+                <img class="photo photo-center" src="images/greeting_photo.jpeg" />
+            </div>
+
+            <div class="to-fade-in" style="padding: 18px 0;"><!--부모이름 + 자녀 이름-->
+                <div>
+                    <span class="boy_father_name"></span> <span>·</span> <span class="boy_mother_name"></span>
+                    <span class="font-size-8">의 아들</span>
+                    <span class="boy_name"></span>
                 </div>
 
-                <div class="text-box2"><!--글귀 2-->
-                    살랑이는 바람결에 <br>
-                    사랑이 묻어나는 계절입니다. <br>
-                    여기 곱고 예쁜 두 사람이 <span class="font-brown">사랑</span>을 맺어 <br>
-                    인생의 반려자가 되려 합니다. <br>
-                    새 인생을 시작하는 이 자리에 오셔서 <br>
-                    <span class="font-brown">축복</span>해 주시면 감사하겠습니다. <br>
+                <br>
+                <div style="margin-top: -40px;">
+                    <span class="girl_father_name"></span> <span>·</span> <span class="girl_mother_name"></span>
+                    <span class="font-size-8">의 딸</span>
+                    <span class="girl_name"></span>
                 </div>
+            </div>
 
-                <div class="photo-div-box"><!--사진 1-->
-                    <img class="photo photo-center" src="images/greeting_photo.jpeg" />
+            <div><!--연락하기 버튼 1--></div>
+
+
+
+        </div>
+        <div class="calendar-wrap">
+            <div class="calendar-inner to-fade-in">
+                <div class="title">
+                    <div class="date">2024.06.01</div>
+                    <div class="time">토요일 오후 12시 30분</div>
                 </div>
+                <div class="calendar">
+                    <table class="calendar-table" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;">
+                                    <div class="calendar-Dday">
+                                        <div class="">1</div>
+                                    </div> <span class="">1</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class="">2</span></td>
+                                <td style="position: relative;"><!----> <span class="">3</span></td>
+                                <td style="position: relative;"><!----> <span class="">4</span></td>
+                                <td style="position: relative;"><!----> <span class="">5</span></td>
+                                <td style="position: relative;"><!----> <span class="">6</span></td>
+                                <td style="position: relative;"><!----> <span class="">7</span></td>
+                                <td style="position: relative;"><!----> <span class="">8</span></td>
 
-                <div style="padding: 18px 0;"><!--부모이름 + 자녀 이름-->
-                    <div>
-                        <span class="boy_father_name"></span> <span>·</span> <span class="boy_mother_name"></span>
-                        <span class="font-size-8">의 아들</span>
-                        <span class="boy_name"></span>
-                    </div>
+                            </tr>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class="">9</span></td>
+                                <td style="position: relative;"><!----> <span class="">10</span></td>
+                                <td style="position: relative;"><!----> <span class="">11</span></td>
+                                <td style="position: relative;"><!----> <span class="">12</span></td>
+                                <td style="position: relative;"><!----> <span class="">13</span></td>
+                                <td style="position: relative;"><!----> <span class="">14</span></td>
+                                <td style="position: relative;"><!----> <span class="">15</span></td>
 
-                    <br>
-                    <div style="margin-top: -40px;">
-                        <span class="girl_father_name"></span> <span>·</span> <span class="girl_mother_name"></span>
-                        <span class="font-size-8">의 딸</span>
-                        <span class="girl_name"></span>
-                    </div>
-                </div>
+                            </tr>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class="">16</span></td>
+                                <td style="position: relative;"><!----> <span class="">17</span></td>
+                                <td style="position: relative;"><!----> <span class="">18</span></td>
+                                <td style="position: relative;"><!----> <span class="">19</span></td>
+                                <td style="position: relative;"><!----> <span class="">20</span></td>
+                                <td style="position: relative;"><!----> <span class="">21</span></td>
+                                <td style="position: relative;"><!----> <span class="">22</span></td>
 
-                <div><!--연락하기 버튼 1-->
-
+                            </tr>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class="">23</span></td>
+                                <td style="position: relative;"><!----> <span class="">24</span></td>
+                                <td style="position: relative;"><!----> <span class="">25</span></td>
+                                <td style="position: relative;"><!----> <span class="">26</span></td>
+                                <td style="position: relative;"><!----> <span class="">27</span></td>
+                                <td style="position: relative;"><!----> <span class="">28</span></td>
+                                <td style="position: relative;"><!----> <span class="">29</span></td>
+                            </tr>
+                            <tr>
+                                <td style="position: relative;"><!----> <span class="">30</span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                                <td style="position: relative;"><!----> <span class=""></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
