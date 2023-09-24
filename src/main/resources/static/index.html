@@ -138,7 +138,7 @@
             animation-name: fade-in;
             animation-duration: 1s;
         }
-
+    <h1>Hello World</h1>
 
 
 
@@ -164,10 +164,20 @@
             }
         }
 
+        /* lkk : page 2*/
+        .text-box1{letter-spacing: 0.5px; font-size: 1.1rem; margin-bottom: 20px;}
+        .text-box2{font-size: .8rem; line-height: 2rem; width: 260px; display: inline-block; white-space-collapse: collapse; margin: 16px 1rem 3.2rem;}
+        .photo-center{top: -50%; position: relative;}
+        .photo-div-box {width:430px; height:300px; overflow: hidden; margin-bottom: 20px;}
+        .font-size-8 {font-size: .8rem; color: #8a857f; display: inline-block; width:51px;}
+        .font-brown {color: #c28e79; font-weight: 600; }
+
     </style>
     <meta charset="UTF-8">
     <title>이강민 ♥ 이지혜 결혼합니다</title>
 </head>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <body>
     <div class="mcard-view">
@@ -214,19 +224,73 @@
         </div>
         <div class="greeting-wrap">
             <div class="to-fade-in">
-                
+                <!--div 4개로 나누기-->
+                <div class="text-box1"><!--글귀 1-->
+                    소중한 분들을 초대합니다
+                </div>
+
+                <div class="text-box2"><!--글귀 2-->
+                    살랑이는 바람결에 <br>
+                    사랑이 묻어나는 계절입니다. <br>
+                    여기 곱고 예쁜 두 사람이 <span class="font-brown">사랑</span>을 맺어 <br>
+                    인생의 반려자가 되려 합니다. <br>
+                    새 인생을 시작하는 이 자리에 오셔서 <br>
+                    <span class="font-brown">축복</span>해 주시면 감사하겠습니다. <br>
+                </div>
+
+                <div class="photo-div-box"><!--사진 1-->
+                    <img class="photo photo-center" src="images/main_photo.jpeg" />
+                </div>
+
+                <div style="padding: 18px 0;"><!--부모이름 + 자녀 이름-->
+                    <div>
+                        <span class="boy_father_name"></span> <span>·</span> <span class="boy_mother_name"></span>
+                        <span class="font-size-8">의 아들</span>
+                        <span class="boy_name"></span>
+                    </div>
+
+                    <br>
+                    <div style="margin-top: -40px;">
+                        <span class="gril_father_name"></span> <span>·</span> <span class="gril_mother_name"></span>
+                        <span class="font-size-8">의 딸</span>
+                        <span class="gril_name"></span>
+                    </div>
+                </div>
+
+                <div><!--연락하기 버튼 1-->
+
+                </div>
             </div>
         </div>
 
     </div>
 
     <script>
+
+        //초기 설정
+        var gril_name = "강민";
+        var boy_name = "지혜";
+        var gril_father_name = "김삼삼";
+        var gril_mother_name = "김사사";
+        var boy_father_name = "홍길삼";
+        var boy_mother_name = "홍길사";
+
+        $(window).load(function(){
+            $(".boy_name").text(boy_name);
+            $(".boy_father_name").text(boy_father_name);
+            $(".boy_mother_name").text(boy_mother_name);
+            $(".gril_name").text(gril_name);
+            $(".gril_father_name").text(gril_father_name);
+            $(".gril_mother_name").text(gril_mother_name);
+
+        });
+
         // This code is related when the animation would be occured.
         const options = {
             root: null, // viewport
             rootMargin: "0px",
             threshold: 1.0,
-            // How much the element shows on the screen. 
+            // How much the element shows on the screen.
             // In this case 100%. You can change this value.
         }
 
