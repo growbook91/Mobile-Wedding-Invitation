@@ -598,7 +598,7 @@
 
         $(function () {
             try {
-                getClock(); //맨처음에 한번 실행
+                getClock(1); //맨처음에 한번 실행
             } catch (e) {
                 if (window.console) {
                     console.log(e);
@@ -609,7 +609,8 @@
 
 
         //This function calculate and update remained time.
-        function getClock() {
+        function getClock(initialization) {
+
             const currentTime = new Date();
             const goalTime = new Date('2024-06-01T12:30:00');
             // const baseTime = new Date();
@@ -627,11 +628,23 @@
             diff = diff % (1000 * 60);
             const sec = String(Math.trunc(diff / 1000)).padStart(2, "0");
 
-
-            $("span#days").text(days);
-            $("span#hour").text(hour);
-            $("span#min").text(min);
             $("span#sec").text(sec);
+            if(sec == 0){
+                $("span#min").text(min);
+            }
+            if(min == 0){
+                $("span#hour").text(hour);
+            }
+            if(hour == 0){
+                $("span#days").text(days);
+            }
+            else if(initialization==1){
+                $("span#min").text(min);
+                $("span#hour").text(hour);
+                $("span#days").text(days);
+            }
+
+            
             
         }
 
