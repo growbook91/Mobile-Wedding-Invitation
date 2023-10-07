@@ -282,6 +282,53 @@
             background: var(--icon-color);
         }
 
+        .dday-wrap {
+            letter-spacing: -.5px;
+            border-left: 0;
+            border-right: 0;
+            font-size: .9rem;
+        }
+
+        .dday-wrap .countdown {
+            font-family: Crimson-Pro;
+            margin: 0 0 10px;
+        }
+
+        .dday-wrap .countdown>div {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 10px !important;
+            letter-spacing: 0;
+            line-height: 1rem;
+            text-transform: uppercase;
+        }
+
+        .dday-wrap .countdown .card {
+            color: var(--text-dark-color);
+            font-size: 1.2rem !important;
+            width: 2rem;
+            border-radius: 8px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            opacity: .8;
+        }
+
+        .dday-wrap .countdown .desc {
+            color: var(--text-dark-color);
+            opacity: .4;
+        }
+
+        .dday-wrap .countdown>div>span {
+            display: inline-block;
+            padding: 0 2px;
+            text-align: center;
+            line-height: 1.8rem;
+        }
+
+        .dday-wrap .highlight {
+            color: #ea7664;
+        }
+
         /* calendar-wrap */
 
         /* animation */
@@ -410,12 +457,12 @@
 
         </div>
         <div class="calendar-wrap">
-            <div class="calendar-inner to-fade-in">
-                <div class="title">
+            <div class="calendar-inner">
+                <div class="title to-fade-in">
                     <div class="date">2024.06.01</div>
                     <div class="time">토요일 오후 12시 30분</div>
                 </div>
-                <div class="calendar">
+                <div class="calendar to-fade-in">
                     <table class="calendar-table" cellspacing="0">
                         <thead>
                             <tr>
@@ -493,6 +540,37 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- <span id="clock"></span> -->
+                <div class="dday-wrap fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="countdown">
+                        <div>
+                            <div class="desc">Days</div><span class="card" id="days"
+                                style="min-width: 2rem; width: auto;">20</span>
+                        </div>
+                        <div>
+                            <div class="desc">&nbsp;</div><span>:</span>
+                        </div>
+                        <div>
+                            <div class="desc">Hour</div><span class="card" id="hour">21</span>
+                        </div>
+                        <div>
+                            <div class="desc">&nbsp;</div><span>:</span>
+                        </div>
+                        <div>
+                            <div class="desc">Min</div><span class="card" id="min">54</span>
+                        </div>
+                        <div>
+                            <div class="desc">&nbsp;</div><span>:</span>
+                        </div>
+                        <div>
+                            <div class="desc">Sec</div><span class="card" id="sec">26</span>
+                        </div>
+                    </div>
+                    <div>
+                        강민 <span class="highlight" style="font-size: 11px;">♥</span> 지혜의 결혼식이
+                        <span><span class="highlight" id="days">34 </span><span class="highlight">일</span> <span>남았습니다.</span> <!----></span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -517,6 +595,46 @@
             $(".girl_mother_name").text(girl_mother_name);
 
         });
+
+        $(function () {
+            try {
+                getClock(); //맨처음에 한번 실행
+            } catch (e) {
+                if (window.console) {
+                    console.log(e);
+                }
+            }
+        });
+        setInterval(getClock, 1000); //1초 주기로 새로실행
+
+
+        //This function calculate and update remained time.
+        function getClock() {
+            const currentTime = new Date();
+            const goalTime = new Date('2024-06-01T12:30:00');
+            // const baseTime = new Date();
+            var diff = goalTime.getTime() - currentTime.getTime();
+            // const left = new Date();
+
+            // baseTime.setTime(0);
+            // left.setTime(baseTime.getTime() + diff.getTime());
+
+            const days = String(Math.trunc(diff / (1000 * 3600 * 24))).padStart(2, "0");
+            diff = diff % (1000 * 3600 * 24);
+            const hour = String(Math.trunc(diff / (1000 * 3600))).padStart(2, "0");
+            diff = diff % (1000 * 3600);
+            const min = String(Math.trunc(diff / (1000 * 60))).padStart(2, "0");
+            diff = diff % (1000 * 60);
+            const sec = String(Math.trunc(diff / 1000)).padStart(2, "0");
+
+
+            $("span#days").text(days);
+            $("span#hour").text(hour);
+            $("span#min").text(min);
+            $("span#sec").text(sec);
+            
+        }
+
 
         // This code is related when the animation would be occured.
         const options = {
