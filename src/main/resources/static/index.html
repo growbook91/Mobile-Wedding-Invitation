@@ -199,6 +199,13 @@
             font-weight: 600;
         }
 
+        .call-btn {
+            background: transparent;
+            border-radius: 20px;
+            border-width: 1px;
+            padding: 7px 40px 7px 40px;
+        }
+
         /* greeting-wrap */
 
         /* calendar-wrap */
@@ -452,6 +459,7 @@
             </div>
 
             <div><!--연락하기 버튼 1--></div>
+            <button onclick="fnClickCalling()" class="call-btn">연락하기</button>
 
 
 
@@ -544,7 +552,7 @@
                 <div class="dday-wrap to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                     <div class="countdown">
                         <div>
-                            <div class="desc">Days</div><span class="card" id="days"
+                            <div class="desc">Days</div><span class="card" id="day"
                                 style="min-width: 2rem; width: auto;">20</span>
                         </div>
                         <div>
@@ -670,6 +678,13 @@
         const slideUpList = document.querySelectorAll('.to-fade-in');
 
         slideUpList.forEach(el => upwardObserver.observe(el));
+
+        //연락하기 버튼 클릭 기능
+        function fnClickCalling(){
+            console.log("연락하기");
+             window.open("/home", "test",);
+            document.location.href='tel:01056318638';
+        }
     </script>
 </body>
 
