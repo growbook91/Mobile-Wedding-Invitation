@@ -552,7 +552,8 @@
                 <div class="dday-wrap to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                     <div class="countdown">
                         <div>
-                            <div class="desc">Days</div><span class="card" id="day"
+
+                            <div class="desc">Days</div><span class="card days"
                                 style="min-width: 2rem; width: auto;">20</span>
                         </div>
                         <div>
@@ -576,7 +577,8 @@
                     </div>
                     <div>
                         강민 <span class="highlight" style="font-size: 11px;">♥</span> 지혜의 결혼식이
-                        <span><span class="highlight" id="days">34 </span><span class="highlight">일</span> <span>남았습니다.</span> <!----></span>
+                        <span><span class="highlight days">34 </span><span class="highlight">일</span>
+                            <span>남았습니다.</span> <!----></span>
                     </div>
                 </div>
             </div>
@@ -637,23 +639,22 @@
             const sec = String(Math.trunc(diff / 1000)).padStart(2, "0");
 
             $("span#sec").text(sec);
-            if(sec == 0){
+            if (sec == 0) {
                 $("span#min").text(min);
             }
-            if(min == 0){
+            if (min == 0) {
                 $("span#hour").text(hour);
             }
-            if(hour == 0){
+            if (hour == 0) {
                 $("span#days").text(days);
             }
-            else if(initialization==1){
+            else if (initialization == 1) {
                 $("span#min").text(min);
                 $("span#hour").text(hour);
-                $("span#days").text(days);
+                $("span.days").text(days);
             }
 
-            
-            
+
         }
 
 
@@ -680,10 +681,10 @@
         slideUpList.forEach(el => upwardObserver.observe(el));
 
         //연락하기 버튼 클릭 기능
-        function fnClickCalling(){
+        function fnClickCalling() {
             console.log("연락하기");
-             window.open("/home", "test",);
-            document.location.href='tel:01056318638';
+            window.open("/home", "test",);
+            document.location.href = 'tel:01056318638';
         }
     </script>
 </body>
