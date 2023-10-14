@@ -3,11 +3,14 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <style>
     </style>
     <meta charset="UTF-8">
     <title>이강민 ♥ 이지혜 결혼합니다</title>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=bhncyvb1zh"></script>
 </head>
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -286,8 +289,78 @@
             </div>
         </div>
 
+        <div class="map-wrap">
+            <div class="m-title to-fade-in">
+                <div class="greetings-title">
+                    오시는 길
+                </div>
+            </div>
+            <div>
+                <div class="location-wrap">
+                    <div class="location-hall fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div>한국기독교연합회관 3층 아가페홀</div>
+                    </div>
+                    <div class="location-address fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div>서울 종로구 김상옥로 30</div>
+                    </div>
+                </div>
+                <div class="map-inner fade-in" style="opacity: 1; transform: translate(0px, 0px);"><!---->
+                    <div>
+                        <div id="map"></div>
+                    </div>
+                    <div>
+                        <div class="c-map-navi gothic">
+                            <div class="navi">
+                                <img src="./images/icon_navermap.png"> <span>네이버 지도</span>
+                            </div>
+                            <div class="navi"><img src="./images/icon_kakaonavi.png"> <span>카카오
+                                    내비</span></div>
+                            <div class="navi"><img src="./images/icon_tmap.png"> <span>티맵</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="waytocome-wrap">
+                    <div class="box to-fade-in"><!---->
+                        <div class="right">
+                            <div class="title"><span>지하철</span></div>
+                            <div class="content">
+                                <div><span style="color:#77815c">⦁ 1호선 종로5가역</span> 1번 출구 (도보 2분)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="box fade-in" style="opacity: 1; transform: translate(0px, 0px);"><!---->
+                        <div class="right">
+                            <div class="title"><span>주차</span></div>
+                            <div class="content">
+                                <div>예식장 건물 내 2시간 무료 주차가 가능합니다.
+                                    안내데스크에서 <span class="c-bold"><u>주차권</u></span>을 수령할 수 있습니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <script id="code">
+        var mapOptions = {
+            center: new naver.maps.LatLng(37.572892, 127.0009225),
+            zoom: 17
+        };
+
+        var mapDiv = document.getElementById('map');
+        var map = new naver.maps.Map(mapDiv, mapOptions);
+
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(37.572892, 127.0009225),
+            map: map
+        });
+    </script>
     <script>
 
         //초기 설정

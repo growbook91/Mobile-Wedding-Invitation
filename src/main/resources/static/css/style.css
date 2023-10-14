@@ -1,373 +1,424 @@
 /*기존 css 복사*/
- html {
-            /* global css var */
-            --img-blur: 0px;
-            --text-color: #544f4f;
-            --text-dark-color: #2b2222;
-            --text-light-color: #797979;
-            --title-text-color: #111;
-            --subtitle-text-color: #111;
-            --icon-color: #858585;
-            --border-size: 1px;
-            --border-color: #ddd;
-            --border-light-color: #ebebeb;
-            --border-dark-color: #ebebeb;
-            --wave-color: #fff;
-            --primary-bg-color: #fff;
-            --secondary-bg-color: #f9f9f9;
-            --third-bg-color: #f9f9f9;
-            --fourth-bg-color: #fff;
-            --footer-bg-color: #f6f6f6;
-            --margin-bg-color: #333;
-            --btn-bg-color: rgba(0, 0, 0, 0);
-            --btn-text-color: #404040;
-            --btn-border-color: #878787;
-            --btn-dark-bg-color: #f9f9f9;
-            --btn-dark-text-color: #111;
-            --btn-dark-border-color: #eaeaea;
-            --font-size: 18px;
-            --common-margin-lr: 2rem;
-            --calendar-margin-lr: 3rem;
-            /* --font-regular: IropkeBatangM; */
-            --font-regular-spacing: 0;
-            /* --font-gothic: Pretendard Variable; */
-            --font-gothic-spacing: -0.2px;
-            /* --font-bold: IropkeBatangM; */
-            --font-bold-weight: bold;
+html {
+    /* global css var */
+    --img-blur: 0px;
+    --text-color: #544f4f;
+    --text-dark-color: #2b2222;
+    --text-light-color: #797979;
+    --title-text-color: #111;
+    --subtitle-text-color: #111;
+    --icon-color: #858585;
+    --border-size: 1px;
+    --border-color: #ddd;
+    --border-light-color: #ebebeb;
+    --border-dark-color: #ebebeb;
+    --wave-color: #fff;
+    --primary-bg-color: #fff;
+    --secondary-bg-color: #f9f9f9;
+    --third-bg-color: #f9f9f9;
+    --fourth-bg-color: #fff;
+    --footer-bg-color: #f6f6f6;
+    --margin-bg-color: #333;
+    --btn-bg-color: rgba(0, 0, 0, 0);
+    --btn-text-color: #404040;
+    --btn-border-color: #878787;
+    --btn-dark-bg-color: #f9f9f9;
+    --btn-dark-text-color: #111;
+    --btn-dark-border-color: #eaeaea;
+    --font-size: 18px;
+    --common-margin-lr: 2rem;
+    --calendar-margin-lr: 3rem;
+    /* --font-regular: IropkeBatangM; */
+    --font-regular-spacing: 0;
+    /* --font-gothic: Pretendard Variable; */
+    --font-gothic-spacing: -0.2px;
+    /* --font-bold: IropkeBatangM; */
+    --font-bold-weight: bold;
 
-            font-size: calc(var(--font-size) * 430 / 390);
-            overflow: scroll;
-        }
+    font-size: calc(var(--font-size) * 430 / 390);
+    overflow: scroll;
+}
 
-        body {
-            padding: 0;
-            margin: 0;
-            background-color: #000000;
-            height: 100vh;
-        }
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    height: 100vh;
+}
 
-        .mcard-view {
-            text-align: center;
-            font-family: "MaruBuri-Light", sans-serif;
-            background-color: White;
-            padding: 0;
-            margin: auto;
-            max-width: 430px;
-            line-height: 2rem;
-        }
+.mcard-view {
+    text-align: center;
+    font-family: "MaruBuri-Light", sans-serif;
+    background-color: White;
+    padding: 0;
+    margin: auto;
+    max-width: 430px;
+    line-height: 2rem;
+}
 
-        @font-face {
-            font-family: 'MaruBuri-Light';
-            src: url('../fonts/MaruBuri-Light.ttf')
-        }
+@font-face {
+    font-family: 'MaruBuri-Light';
+    src: url('../fonts/MaruBuri-Light.ttf')
+}
 
-        @font-face {
-            font-family: 'Crimson-Pro';
-            src: url('../fonts/CrimsonPro-Regular.ttf')
-        }
+@font-face {
+    font-family: 'Crimson-Pro';
+    src: url('../fonts/CrimsonPro-Regular.ttf')
+}
 
-        /* 여기가 mcard intro */
-        .mcard-intro {
-            margin: 0 0 40px;
-        }
+/* 여기가 mcard intro */
+.mcard-intro {
+    margin: 0 0 40px;
+}
 
-        .photo {
-            max-width: 430px;
-            object-fit: cover;
-            width: 100vw;
-        }
+.photo {
+    max-width: 430px;
+    object-fit: cover;
+    width: 100vw;
+}
 
-        .name-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1.5rem;
-            padding: 0 24px;
-            padding-top: 0px;
-            padding-right: 24px;
-            padding-bottom: 0px;
-            padding-left: 24px;
-        }
+.name-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5rem;
+    padding: 0 24px;
+    padding-top: 0px;
+    padding-right: 24px;
+    padding-bottom: 0px;
+    padding-left: 24px;
+}
 
-        .divider {
-            font-size: 1.2rem;
-        }
+.divider {
+    font-size: 1.2rem;
+}
 
-        /* 신랑,신부 이름에 붙은 css */
-        .name {
-            font-size: 1.2rem;
-            vertical-align: middle;
-        }
+/* 신랑,신부 이름에 붙은 css */
+.name {
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
 
-        .bride,
-        .groom {
-            flex: 999;
-        }
+.bride,
+.groom {
+    flex: 999;
+}
 
-        .name-wrap,
-        .date-place {
-            padding: 20px 0;
-        }
+.name-wrap,
+.date-place {
+    padding: 20px 0;
+}
 
-        .mcard-intro .date {
-            font-size: .9rem;
-            letter-spacing: 2px;
-            line-height: 1rem;
-            font-family: 'Crimson-Pro';
-        }
+.mcard-intro .date {
+    font-size: .9rem;
+    letter-spacing: 2px;
+    line-height: 1rem;
+    font-family: 'Crimson-Pro';
+}
 
-        .mcard-intro .place {
-            line-height: 1.6rem;
-            margin-top: 0.4rem;
-        }
+.mcard-intro .place {
+    line-height: 1.6rem;
+    margin-top: 0.4rem;
+}
 
-        /* mcard-intro */
+/* mcard-intro */
 
-        /* word */
-        .word {
-            font-size: 0.9rem;
-            letter-spacing: normal;
-        }
+/* word */
+.word {
+    font-size: 0.9rem;
+    letter-spacing: normal;
+}
 
-        .paragraph-wrap {
-            margin: 1px 0;
-            padding: 40px 0;
-        }
+.paragraph-wrap {
+    margin: 1px 0;
+    padding: 40px 0;
+}
 
-        .paragraph-wrap .title {
-            margin-bottom: 40px;
-        }
+.paragraph-wrap .title {
+    margin-bottom: 40px;
+}
 
-        .paragraph-wrap .circle {
-            display: inline-block;
-            margin: 0 1px;
-            width: 0.3rem;
-            height: 0.3rem;
-            background: var(--icon-color);
-            transform: rotate(45deg);
-            opacity: .21;
-            vertical-align: middle;
-        }
+.paragraph-wrap .circle {
+    display: inline-block;
+    margin: 0 1px;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: var(--icon-color);
+    transform: rotate(45deg);
+    opacity: .21;
+    vertical-align: middle;
+}
 
-        .paragraph-wrap .text {
-            margin: 20px 1rem 0;
-            font-size: .8rem;
-        }
+.paragraph-wrap .text {
+    margin: 20px 1rem 0;
+    font-size: .8rem;
+}
 
-        /* word */
+/* word */
 
-        /* greeting-wrap */
-        .greeting-wrap {
-            padding: 40px 0;
-        }
+/* greeting-wrap */
+.greeting-wrap {
+    padding: 40px 0;
+}
 
-        .text-box1 {
-            letter-spacing: 0.5px;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+.text-box1 {
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
 
-        .text-box2 {
-            font-size: .8rem;
-            line-height: 2rem;
-            width: 260px;
-            display: inline-block;
-            white-space-collapse: collapse;
-            margin: 16px 1rem 3.2rem;
-        }
+.text-box2 {
+    font-size: .8rem;
+    line-height: 2rem;
+    width: 260px;
+    display: inline-block;
+    white-space-collapse: collapse;
+    margin: 16px 1rem 3.2rem;
+}
 
-        .photo-div-box {
-            height: 220px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+.photo-div-box {
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
-        .font-size-8 {
-            font-size: .8rem;
-            color: #8a857f;
-            display: inline-block;
-            width: 51px;
-        }
+.font-size-8 {
+    font-size: .8rem;
+    color: #8a857f;
+    display: inline-block;
+    width: 51px;
+}
 
-        .font-brown {
-            color: #c28e79;
-            font-weight: 600;
-        }
+.font-brown {
+    color: #c28e79;
+    font-weight: 600;
+}
 
-        .call-btn {
-            background: transparent;
-            border-radius: 20px;
-            border-width: 1px;
-            padding: 7px 40px 7px 40px;
-        }
+.call-btn {
+    background: transparent;
+    border-radius: 20px;
+    border-width: 1px;
+    padding: 7px 40px 7px 40px;
+}
 
-        /* greeting-wrap */
+/* greeting-wrap */
 
-        /* calendar-wrap */
-        .calendar-wrap {
-            padding: 30px 0;
-        }
+/* calendar-wrap */
+.calendar-wrap {
+    padding: 30px 0;
+}
 
-        .calendar-inner {
-            padding: 2.6rem 0 3rem;
-            color: var(--text-color);
-            background: var(--secondary-bg-color);
-            border: var(--border-size) solid var(--border-light-color);
-            border-left: 0;
-            border-right: 0;
-        }
-
-
-        .calendar-wrap .date {
-            font-size: 1.4rem;
-            line-height: 2.2rem;
-            color: var(--subtitle-text-color);
-            letter-spacing: 1px;
-            font-family: 'Crimson-Pro';
-            opacity: .8;
-        }
-
-        .calendar-wrap .time {
-            font-size: .9rem;
-        }
-
-        .calendar {
-            padding: 0 10px;
-            margin: 2rem var(--calendar-margin-lr);
-            border: 1px solid var(--border-color);
-            border-left: 0;
-            border-right: 0;
-        }
-
-        .calendar-table {
-            line-height: 1.8rem;
-            margin: auto;
-            width: 100%;
-            font-size: .875rem;
-            padding: 1.5rem 0;
-            border-collapse: separate;
-            text-indent: initial;
-            border-spacing: 2px;
-        }
-
-        .calendar-table>tbody tr td:first-child,
-        .calendar-table>thead tr th:first-child {
-            color: #c6472b !important;
-        }
-
-        td {
-            display: table-cell;
-            vertical-align: inherit;
-        }
-
-        .calendar-Dday {
-            color: #fff;
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .calendar-Dday>div {
-            margin: auto;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 30px;
-            background: var(--icon-color);
-        }
-
-        .dday-wrap {
-            letter-spacing: -.5px;
-            border-left: 0;
-            border-right: 0;
-            font-size: .9rem;
-        }
-
-        .dday-wrap .countdown {
-            font-family: Crimson-Pro;
-            margin: 0 0 10px;
-        }
-
-        .dday-wrap .countdown>div {
-            display: inline-block;
-            vertical-align: top;
-            font-size: 10px !important;
-            letter-spacing: 0;
-            line-height: 1rem;
-            text-transform: uppercase;
-        }
-
-        .dday-wrap .countdown .card {
-            color: var(--text-dark-color);
-            font-size: 1.2rem !important;
-            width: 2rem;
-            border-radius: 8px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            opacity: .8;
-        }
-
-        .dday-wrap .countdown .desc {
-            color: var(--text-dark-color);
-            opacity: .4;
-        }
-
-        .dday-wrap .countdown>div>span {
-            display: inline-block;
-            padding: 0 2px;
-            text-align: center;
-            line-height: 1.8rem;
-        }
-
-        .dday-wrap .highlight {
-            color: #ea7664;
-        }
-
-        /* calendar-wrap */
-
-        /* animation */
-        .to-fade-in {
-            visibility: hidden;
-        }
-
-        /* text sliding up animation */
-        .fade-in {
-            visibility: visible;
-            animation-name: fade-in;
-            animation-duration: 1s;
-        }
+.calendar-inner {
+    padding: 2.6rem 0 3rem;
+    color: var(--text-color);
+    background: var(--secondary-bg-color);
+    border: var(--border-size) solid var(--border-light-color);
+    border-left: 0;
+    border-right: 0;
+}
 
 
+.calendar-wrap .date {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: var(--subtitle-text-color);
+    letter-spacing: 1px;
+    font-family: 'Crimson-Pro';
+    opacity: .8;
+}
 
-        /* this is for chrome */
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
+.calendar-wrap .time {
+    font-size: .9rem;
+}
 
-            100% {
-                opacity: 1;
-            }
-        }
+.calendar {
+    padding: 0 10px;
+    margin: 2rem var(--calendar-margin-lr);
+    border: 1px solid var(--border-color);
+    border-left: 0;
+    border-right: 0;
+}
 
-        /* this is for safari */
-        @-webkit-keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
+.calendar-table {
+    line-height: 1.8rem;
+    margin: auto;
+    width: 100%;
+    font-size: .875rem;
+    padding: 1.5rem 0;
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
 
-            100% {
-                opacity: 1;
-            }
-        }
+.calendar-table>tbody tr td:first-child,
+.calendar-table>thead tr th:first-child {
+    color: #c6472b !important;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.calendar-Dday {
+    color: #fff;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.calendar-Dday>div {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    background: var(--icon-color);
+}
+
+.dday-wrap {
+    letter-spacing: -.5px;
+    border-left: 0;
+    border-right: 0;
+    font-size: .9rem;
+}
+
+.dday-wrap .countdown {
+    font-family: Crimson-Pro;
+    margin: 0 0 10px;
+}
+
+.dday-wrap .countdown>div {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 10px !important;
+    letter-spacing: 0;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+.dday-wrap .countdown .card {
+    color: var(--text-dark-color);
+    font-size: 1.2rem !important;
+    width: 2rem;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    opacity: .8;
+}
+
+.dday-wrap .countdown .desc {
+    color: var(--text-dark-color);
+    opacity: .4;
+}
+
+.dday-wrap .countdown>div>span {
+    display: inline-block;
+    padding: 0 2px;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.dday-wrap .highlight {
+    color: #ea7664;
+}
+
+/* calendar-wrap */
+
+/* map-wrap */
+.map-wrap {
+    margin: 1px 0;
+    padding: 40px 0;
+}
+
+.m-title {
+    color: var(--title-text-color);
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.location-wrap {
+    margin: 18px 0 26px;
+}
+
+.location-hall {
+    color: #000;
+}
+
+.location-address {
+    font-size: .95rem;
+    color: var(--text-light-color);
+}
+
+#map {
+    margin: auto;
+    width: 100vw;
+    height: 15rem;
+}
+
+.c-map-navi>div {
+    flex: 1.2;
+    margin: auto;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    border-right: 1px solid rgba(97, 80, 67, .15);
+    text-align: center;
+    cursor: pointer;
+}
+
+.c-map-navi {
+    font-family: sans-serif;
+    display: flex;
+    font-size: .8rem;
+    background: var(--third-bg-color);
+    padding: 6px 10px;
+}
+
+.navi>img {
+    object-fit: cover;
+    width: 16px;
+    height: 16px;
+}
+
+.waytocome-wrap {
+    padding: 0 var(--common-margin-lr);
+    text-align: left;
+}
+
+.waytocome-wrap .box {
+    display: flex;
+    padding: 10px 0;
+}
+
+.waytocome-wrap .box .right {
+    flex: 999;
+}
+
+.waytocome-wrap .title {
+    font-size: 1rem;
+    color: var(--title-text-color);
+}
+
+.waytocome-wrap .content {
+    font-size: .85rem;
+    line-height: 1.5rem;
+    /* white-space: pre-wrap; */
+}
+
+.map-inner {
+    overflow: hidden;
+}
+
+/* map-wrap */
 
 /*갤러리 css */
 .gallery-wrap {
@@ -382,7 +433,7 @@
     margin-bottom: 20px;
 }
 
-.greetings-title{
+.greetings-title {
     font-size: 16px;
 }
 
@@ -404,11 +455,11 @@
 .gallery-square .ph {
     position: relative;
     padding-bottom: 100%;
-    background: rgba(0,0,0,.02);
+    background: rgba(0, 0, 0, .02);
 }
 
 .gothic {
-    font-family: var(--font-gothic),BlinkMacSystemFont,Apple SD Gothic Neo,Helvetica Neue,Helvetica,Arial,Malgun Gothic,"\B9D1\C740 \ACE0\B515",Dotum,돋움,sans-serif;
+    font-family: var(--font-gothic), BlinkMacSystemFont, Apple SD Gothic Neo, Helvetica Neue, Helvetica, Arial, Malgun Gothic, "\B9D1\C740 \ACE0\B515", Dotum, 돋움, sans-serif;
     letter-spacing: var(--font-gothic-spacing);
 }
 
@@ -450,10 +501,46 @@
     border-right: 1px solid var(--btn-text-color);
 }
 
-.display-none{
-    display:none !important;
+.display-none {
+    display: none !important;
 }
 
 .gallery-more-images {
     animation: fade_in .7s ease-in-out;
+}
+
+/* animation */
+.to-fade-in {
+    visibility: hidden;
+}
+
+/* text sliding up animation */
+.fade-in {
+    visibility: visible;
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+
+
+/* this is for chrome */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* this is for safari */
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
