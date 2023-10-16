@@ -14,6 +14,7 @@
 </head>
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/animation.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <body>
@@ -185,7 +186,7 @@
                     </table>
                 </div>
                 <!-- <span id="clock"></span> -->
-                <div class="dday-wrap to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                <div class="dday-wrap to-fade-in">
                     <div class="countdown">
                         <div>
 
@@ -225,7 +226,7 @@
                 <div class="greetings-title"> 갤러리</div>
             </div>
 
-            <div class="gallery-container gothic fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+            <div class="gallery-container gothic fade-in">
                 <div class="gallery-square">
                     <div class="item">
                         <div class="ph"></div>
@@ -297,14 +298,14 @@
             </div>
             <div>
                 <div class="location-wrap">
-                    <div class="location-hall fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="location-hall fade-in">
                         <div>한국기독교연합회관 3층 아가페홀</div>
                     </div>
-                    <div class="location-address fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="location-address fade-in">
                         <div>서울 종로구 김상옥로 30</div>
                     </div>
                 </div>
-                <div class="map-inner fade-in" style="opacity: 1; transform: translate(0px, 0px);"><!---->
+                <div class="map-inner fade-in"><!---->
                     <div>
                         <div id="map"></div>
                     </div>
@@ -331,8 +332,8 @@
                             </div>
                         </div>
                     </div>
-                
-                    <div class="box fade-in" style="opacity: 1; transform: translate(0px, 0px);"><!---->
+
+                    <div class="box fade-in"><!---->
                         <div class="right">
                             <div class="title"><span>주차</span></div>
                             <div class="content">
@@ -344,6 +345,174 @@
                 </div>
             </div>
         </div>
+        <div>
+            <div class="account-wrap">
+                <div class="m-title fade-in"><span>마음 전하실 곳</span></div>
+                <div class="content fade-in">
+                    <div>참석이 어려우신 분들을 위해<br>계좌번호를 기재하였습니다.<br>너그러운 마음으로 양해 부탁드립니다.</div>
+                </div>
+                <div class="c-account fade-in">
+                    <div class="item">
+                        <div class="title">
+                            <div>
+                                신랑측 계좌번호
+                            </div>
+                            <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg></div>
+                        </div>
+                        <div class="text gothic" style="height: 0px; display: none;">
+                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
+                                <span>최재만</span>
+                            </div>
+                            <div>
+                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
+                                        style="font-size: 2.88em;">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
+                                        </path>
+                                    </svg>
+                                    복사
+                                </div> <!---->
+                            </div>
+                        </div>
+                        <div class="text gothic" style="height: 0px; display: none;">
+                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
+                                <span>최도현</span>
+                            </div>
+                            <div>
+                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
+                                        style="font-size: 2.88em;">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
+                                        </path>
+                                    </svg>
+                                    복사
+                                </div> <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">
+                            <div>
+                                신부측 계좌번호
+                            </div>
+                            <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg></div>
+                        </div>
+                        <div class="text gothic" style="display: none;">
+                            <div class="inner"><span><span class="bank">국민</span>
+                                    <span>200123-45-678900</span></span><br> <span>이하나</span></div>
+                            <div>
+                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
+                                        style="font-size: 2.88em;">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
+                                        </path>
+                                    </svg>
+                                    복사
+                                </div>
+                                <div class="btn-action kakaopay"><img src="/mcard/assets/images/icon-kakaopay.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text gothic" style="display: none;">
+                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
+                                <span>이승태</span>
+                            </div>
+                            <div>
+                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
+                                        style="font-size: 2.88em;">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
+                                        </path>
+                                    </svg>
+                                    복사
+                                </div> <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="guestbook-wrap">
+                    <div class="m-title fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="greetings-title">
+                            방명록
+                        </div>
+                    </div>
+                    <div class="c-guestbook gothic">
+                        <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                            <div class="item">
+                                <div class="close"><span class="date">2023.03.22</span> <span class="icon"><svg
+                                            width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                                            </path>
+                                        </svg></span></div>
+                                <div class="name">Yoon</div>
+                                <div class="text">드뎌 부부 🙊 행복하세요 💓</div>
+                            </div>
+                            <div class="item">
+                                <div class="close"><span class="date">2023.03.22</span> <span class="icon"><svg
+                                            width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                                            </path>
+                                        </svg></span></div>
+                                <div class="name">꼬꼬마친구</div>
+                                <div class="text">결혼 너무 축하한당 ❤️<br>예쁜 사랑 예쁜 나날들이 가득하기를 🌿</div>
+                            </div>
+                            <div class="item">
+                                <div class="close"><span class="date">2023.03.22</span> <span class="icon"><svg
+                                            width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                                            </path>
+                                        </svg></span></div>
+                                <div class="name">누나</div>
+                                <div class="text">자랑스러운 내동생 도현아! 결혼 정말정말 축하해 💗 착하고 예쁜 하나랑 지금처럼 예쁘게 행복하게 잘 살아 🌈</div>
+                            </div>
+                            <div class="item">
+                                <div class="close"><span class="date">2023.03.22</span> <span class="icon"><svg
+                                            width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                                            </path>
+                                        </svg></span></div>
+                                <div class="name">지현</div>
+                                <div class="text">끊이지 않는 두분의 웃음소리가 너무 좋더라구요 항상 행복하고 영원한 사랑하세요 🥰</div>
+                            </div> <!---->
+                        </div>
+                        <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                            <div class="pagination-wrap"><!----></div>
+                            <div class="writing"><button class="m-button gothic">
+                                    작성하기
+                                </button></div>
+                        </div> <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 
@@ -463,7 +632,7 @@
         }
 
         //사진 더 보기 클릭 기능
-        $(".gallery-more-button").click(function(){
+        $(".gallery-more-button").click(function () {
             //1.사진 3개 추가 2.버튼 제거
             $("#add-3img").removeClass("display-none");
             $(".gallery-more-button").addClass("display-none");

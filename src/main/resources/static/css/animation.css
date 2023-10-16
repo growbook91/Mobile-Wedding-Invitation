@@ -1,0 +1,35 @@
+/* animation */
+.to-fade-in {
+    visibility: hidden;
+}
+
+/* text sliding up animation */
+.fade-in {
+    visibility: visible;
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+
+
+/* this is for chrome */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* this is for safari */
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -433,7 +433,7 @@ td {
     margin-bottom: 20px;
 }
 
-.greetings-title {
+.gallery-wrap > .greetings-title {
     font-size: 16px;
 }
 
@@ -509,38 +509,121 @@ td {
     animation: fade_in .7s ease-in-out;
 }
 
-/* animation */
-.to-fade-in {
-    visibility: hidden;
+/* account wrap */
+.account-wrap {
+    margin: 1px auto;
+    padding: 40px var(--common-margin-lr);
 }
 
-/* text sliding up animation */
-.fade-in {
-    visibility: visible;
-    animation-name: fade-in;
-    animation-duration: 1s;
+.account-wrap>.content {
+    margin: 0 1rem;
+    font-size: .9rem;
+    line-height: 1.6rem;
 }
 
-
-
-/* this is for chrome */
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.c-account {
+    max-width: 100%;
+    margin: 2rem auto 0;
+    font-size: .9rem;
 }
 
-/* this is for safari */
-@-webkit-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.c-account .item:first-child {
+    border: 0;
 }
+
+.c-account .text:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.c-account .item {
+    margin-top: 12px;
+}
+
+.c-account .title {
+    position: relative;
+    margin: 0 auto;
+    padding: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    color: var(--text-dark-color);
+    background: var(--third-bg-color);
+    border: 1px solid var(--border-dark-color);
+    border-radius: 6px;
+}
+
+.c-account .title>.arrow {
+    position: absolute;
+    top: 9px;
+    right: 18px;
+    transform: rotate(0);
+    transition-duration: .5s;
+    transform-origin: center center;
+}
+
+.c-account svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-top: -6px;
+}
+
+.c-account .text>.inner {
+    padding: 0.75rem 0 0.75rem 0.85rem;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: left;
+    background: var(--fourth-bg-color);
+}
+
+/* account wrap */
+
+/* guest book wrap */
+.guestbook-wrap {
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+
+.c-guestbook {
+    margin: 0;
+    font-size: .86rem;
+}
+
+.c-guestbook .comments {
+    padding: var(--common-margin-lr);
+    background: var(--secondary-bg-color);
+    border: var(--border-size) solid var(--border-light-color);
+    border-left: 0;
+    border-right: 0;
+}
+
+.c-guestbook .item {
+    position: relative;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+    background: var(--fourth-bg-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-light-color);
+}
+
+.c-guestbook .item .close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    line-height: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.c-guestbook .item .name {
+    font-weight: 600;
+    font-size: .8rem;
+    margin-bottom: 0.25rem;
+}
+
+.c-guestbook .item .text {
+    line-height: 1.25rem;
+}
+/* guest book wrap */
