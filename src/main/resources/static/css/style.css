@@ -586,7 +586,7 @@ td {
 
 .c-guestbook {
     margin: 0;
-    font-size: .86rem;
+    font-size: .7rem;
 }
 
 .c-guestbook .comments {
@@ -625,5 +625,15 @@ td {
 
 .c-guestbook .item .text {
     line-height: 1.25rem;
+}
+
+.c-guestbook .tools {
+    padding: 10px var(--common-margin-lr);
+}
+
+.c-guestbook .tools>.writing {
+    display: inline-block;
+    width: 5.5rem;
+    padding: 8px 0;
 }
 /* guest book wrap */
