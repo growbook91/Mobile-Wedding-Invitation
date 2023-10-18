@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CommentController {
@@ -29,7 +31,7 @@ public class CommentController {
     }
     @GetMapping(value = "/comment")
     public String createForm() {
-        return "createCommentForm";
+        return "comment/createCommentForm";
     }
 
     // 댓글 생성하는 것
@@ -43,9 +45,18 @@ public class CommentController {
     }
     // TODO: 삭제하는 것
     // get으로 먼저 삭제 페이지를 보여줘야 하네.
-//    @PostMapping(value = "/comment/{id}")
-//    public String delete(@PathVariable Integer id){
-//        commentService.deleteComment();
-//    }
+    @GetMapping(value = "/comment/{id}")
+    public String deleteForm(Model model, @PathVariable Integer id){
+        model.addAttribute("id", id);
+//        System.out.println("okok");
+        return "comment/deleteCommentForm";
+    }
+
+    @PostMapping(value = "/comment/{id}")
+    public String delete(CommentForm form,@PathVariable Long id){
+        Optional<Comment> result = commentService.getCommentById(id);
+        result.ifPresent(comment -> commentService.deleteComment(comment, form.getPassword()));
+        return "redirect:/";
+    }
 
 }
