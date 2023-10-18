@@ -2,11 +2,10 @@ package leefamily.mobileweddinginvitation.domain;
 
 public class Comment {
 
-    public Comment(String name, String content, String date, String password){
+    public Comment(String name, String content, String password){
         this.name = name;
         this.password = password;
         this.content = content;
-        this.date = date;
     }
     private String name;
     private  String content;

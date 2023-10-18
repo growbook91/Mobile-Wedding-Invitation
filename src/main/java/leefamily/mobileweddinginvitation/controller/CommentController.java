@@ -22,7 +22,7 @@ public class CommentController {
     @GetMapping(value = "/")
     public String list(Model model){
         List<Comment> comments = commentService.getCommentList();
-        // 이 모델은 뭐하는 것인가?
+        // FIXME : 이 모델은 뭐하는 것인가?
         model.addAttribute("comments", comments);
         return "index";
     }
@@ -34,7 +34,8 @@ public class CommentController {
     // 댓글 생성하는 것
     @PostMapping(value = "/comment/new")
     public String create(CommentForm form) {
-        Comment comment = new Comment(form.getName(), form.getContent(), "2023.10.18", form.getPassword());
+        // FIXME : 얘도...흠...어떻게 parameter를 넣어주는 거지..?
+        Comment comment = new Comment(form.getName(), form.getContent(), form.getPassword());
         comment.setName(form.getName());
         commentService.writeComment(comment);
         return "redirect:/";
