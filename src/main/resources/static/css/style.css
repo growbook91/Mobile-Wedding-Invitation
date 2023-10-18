@@ -637,3 +637,91 @@ td {
     padding: 8px 0;
 }
 /* guest book wrap */
+
+/*예식정보 및 안내사항*/
+.notice-tab-wrap {
+    padding: 10px var(--common-margin-lr);
+    margin: 30px 0;
+}
+.notice-tab-wrap .m-title {
+    margin-bottom: 30px;
+}
+.m-title {
+    color: var(--title-text-color);
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+.ntab {
+    font-size: .9rem;
+    line-height: 1.7rem;
+}
+.notice-tab-wrap .ntab .titles.bg {
+    background: var(--secondary-bg-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.ntab>.titles {
+    display: flex;
+}
+.notice-tab-wrap .ntab .title[active] {
+    position: relative;
+    color: var(--title-text-color);
+    background: var(--primary-bg-color);
+    background-image: var(--primary-bg-image);
+    border-color: var(--border-color);
+}
+.notice-tab-wrap .ntab .title:first-child {
+    margin-left: 0;
+}
+.ntab>.titles>.title {
+    flex: 1;
+    cursor: pointer;
+}
+.notice-tab-wrap .ntab .title {
+    flex: 1;
+    position: relative;
+    padding: 8px;
+    margin: 0 0 -1px -1px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+}
+.notice-tab-wrap .ntab .contents.first-tab {
+    border-top-left-radius: 0;
+}
+.notice-tab-wrap .ntab .contents {
+    padding: 2rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: hsla(0,0%,100%,.5);
+    box-shadow: 0 100px 0 0 var(--primary-bg-color),0 100px 0 100px var(--secondary-bg-color);
+}
+.ntab-viewport {
+    transition: height .3s;
+}
+.ntab .content {
+    width: 100%;
+    padding-bottom: 1px;
+}
+.notice-tab-wrap .ntab .contents .img-wrap.top {
+    margin-bottom: 1.2rem;
+}
+.notice-tab-wrap .ntab .contents .img-wrap {
+    display: inline-block;
+    width: 90%;
+}
+.ntab .content .img-wrap {
+    line-height: 0;
+}
+.notice-tab-wrap .ntab .text {
+    padding: 0 0.8rem;
+}
