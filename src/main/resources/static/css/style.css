@@ -725,3 +725,72 @@ td {
 .notice-tab-wrap .ntab .text {
     padding: 0 0.8rem;
 }
+.notice-wrap {
+    padding: 10px var(--common-margin-lr);
+    margin: 30px 0;
+}
+.notice-wrap .box:first-child {
+    margin-top: 0;
+}
+
+.notice-wrap .box {
+    margin: 50px 0 0;
+    padding: 1.6rem 0.8rem 2rem;
+    background: hsla(0,0%,100%,.5);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.notice-wrap .title {
+    color: var(--title-text-color);
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+.notice-wrap .text {
+    font-size: .9rem;
+    line-height: 1.6rem;
+}
+.rsvp-wrap {
+    padding: 10px var(--common-margin-lr);
+    margin: 30px 0;
+}
+.rsvp-wrap .card {
+    padding: 1.6rem 0.8rem 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: hsla(0,0%,100%,.5);
+}
+.rsvp-wrap .title {
+    color: var(--title-text-color);
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+.m-button.dark {
+    border: 1px solid var(--btn-dark-border-color);
+    background: var(--btn-dark-bg-color);
+    color: var(--btn-dark-text-color);
+}
+.m-button img, .m-button svg {
+    margin: -1px 2px 0;
+    height: 0.86rem;
+    width: 0.86rem;
+    vertical-align: middle;
+}
+.m-button {
+    display: inline-block;
+    text-decoration: none;
+    height: 2rem;
+    line-height: 2rem;
+    background: #fff;
+    padding: 0 26px;
+    background: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: 1px solid var(--btn-border-color);
+    border-radius: 32px;
+    font-size: .86rem;
+    font-weight: 400;
+    cursor: pointer;
+    letter-spacing: 0!important;
+}
+
