@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface CommentRepository {
     // 생성과 삭제 findAll이 구현되어야 한다.
     Comment create(Comment comment);
-    boolean delete(Comment comment);
+    boolean delete(Long id);
+    Optional<Comment> findById(Long id);
     List<Comment> findAll();
 }

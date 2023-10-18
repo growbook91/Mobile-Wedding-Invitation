@@ -1,10 +1,18 @@
 package leefamily.mobileweddinginvitation.domain;
 
 public class Comment {
-//    아...비밀번호를 추가해서 나중에 적합성을 검사해야해...그리고 service나 controller쪽에 유효성검사도..!
+
+    public Comment(String name, String content, String date, String password){
+        this.name = name;
+        this.password = password;
+        this.content = content;
+        this.date = date;
+    }
     private String name;
     private  String content;
     private String date;
+    private  String password;
+    private Long id;
 
     public long getId() {
         return id;
@@ -13,8 +21,6 @@ public class Comment {
     public void setId(long id) {
         this.id = id;
     }
-
-    private long id;
 
 
     public String getName() {
@@ -39,6 +45,13 @@ public class Comment {
 
     public void setDate(String date) {
         this.date = date;
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 
