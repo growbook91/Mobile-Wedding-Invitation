@@ -6,6 +6,7 @@ import leefamily.mobileweddinginvitation.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -41,5 +42,10 @@ public class CommentController {
         return "redirect:/";
     }
     // TODO: 삭제하는 것
+    // get으로 먼저 삭제 페이지를 보여줘야 하네.
+//    @PostMapping(value = "/comment/{id}")
+//    public String delete(@PathVariable Integer id){
+//        commentService.deleteComment();
+//    }
 
 }
