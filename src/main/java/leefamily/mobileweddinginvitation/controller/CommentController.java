@@ -54,6 +54,7 @@ public class CommentController {
 
     @PostMapping(value = "/comment/{id}")
     public String delete(CommentForm form,@PathVariable Long id){
+        System.out.println("okok");
         Optional<Comment> result = commentService.getCommentById(id);
         result.ifPresent(comment -> commentService.deleteComment(comment, form.getPassword()));
         return "redirect:/";
