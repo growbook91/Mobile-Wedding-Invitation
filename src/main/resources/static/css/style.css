@@ -794,3 +794,66 @@ td {
     letter-spacing: 0!important;
 }
 
+/*모달 창 css*/
+/** 공통 속성 설정 */
+* { padding: 0; margin: 0; }
+ul { list-style: none; }
+.pull-left { float: left; }
+.clearfix:after { content: ''; display: block; clear: both; float: none; }
+
+/** 목록 박스의 넓이 지정 및 중앙 배치 */
+.gallery { width: 700px; margin: auto; border: 5px solid #d5d5d5; }
+
+/** 각 항목에 대한 가로 배열 */
+.gallery .item { width: 25%; }
+
+/** 각 항목 링크에 대한 크기 지정 */
+.gallery .item .modal { display: block; margin: 10px; width: auto; }
+
+/** 이미지에 대한 테두리 제거 및 여백 지정 */
+.gallery .item .modal img { width: 100%; height: 100%; }
+
+/** 화면 전체를 덮는 배경 레이어의 위치, 크기, 투명도 지정 > 기본적으로 표시되지 않도록 설정 */
+.gray_layer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.60;
+    display: none;
+    z-index: 998;
+}
+
+/** 이미지가 표현될 레이어를 화면 중앙에 배치 > 기본적으로 표시되지 않도록 설정 */
+.over_layer {
+    /* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+    margin-left: -188px;
+    display: none;
+    width: 369px;
+    height: 507px;
+    margin-top: -230px;
+    background-color: white;
+    z-index: 999;
+}
+
+.v--modal-overlay.scrollable .v--modal-box {
+    margin-bottom: 2px;
+}
+.v--modal-overlay .v--modal-box {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.v--modal {
+    background-color: white;
+    text-align: left;
+    border-radius: 3px;
+    box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);
+    padding: 0;
+}

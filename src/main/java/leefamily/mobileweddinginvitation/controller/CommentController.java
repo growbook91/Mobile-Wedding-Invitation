@@ -48,4 +48,11 @@ public class CommentController {
 //        commentService.deleteComment();
 //    }
 
+
+    // 참석 의사 팝업 열기
+    // 작성자: kklee
+    @GetMapping(value = "/popup")
+    public String popup() {
+        return "AttendancePopup";
+    }
 }

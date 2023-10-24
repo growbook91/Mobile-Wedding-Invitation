@@ -1,0 +1,59 @@
+.popup-modal-wrap {
+     display: flex;
+     text-align: center;
+     background: #fff;
+     font-size: 1rem;
+     color: #544f4d;
+ }
+ .popup-modal-wrap .btn-close {
+     position: absolute;
+     right: 0;
+     top: 0;
+     padding: 16px 24px;
+     cursor: pointer;
+ }
+ .popup-modal-inner {
+     display: flex;
+     flex: 1;
+     flex-direction: column;
+     padding: 39px 20px 23px;
+     font-size: .9rem;
+     line-height: 1.6rem;
+     border: 5px solid var(--border-color);
+ }
+ .popup-modal-wrap .btn-close svg {
+      width: 12px;
+      height: 12px;
+  }
+  .popup-modal-wrap svg {
+      position: relative;
+      top: -1px;
+      width: 0.8rem;
+      height: 0.8rem;
+      vertical-align: middle;
+      margin-right: 2px;
+  }
+  .popup-modal-inner .title {
+      font-size: 1rem;
+      font-weight: 700;
+  }
+  .popup-modal-inner .content {
+      margin-top: 16px;
+  }
+  .popup-modal-inner .info {
+      padding: 23px 0 31px 8px;
+      margin-top: 23px;
+      border-top: 1px solid #eee;
+      font-size: .8rem;
+      text-align: left;
+      vertical-align: middle;
+  }
+  .popup-modal-inner .info>div {
+      display: flex;
+      gap: 5px;
+  }
+  .popup-modal-inner .skip-today {
+      margin-top: 16px;
+      color: #aaa;
+      cursor: pointer;
+  }
