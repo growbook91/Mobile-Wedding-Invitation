@@ -31,7 +31,7 @@ public class JdbcTemplateCommentRepository implements CommentRepository {
 
         parameters.put("name", comment.getName());
         parameters.put("content", comment.getContent());
-        parameters.put("password", comment.getName());
+        parameters.put("password", comment.getPassword());
         parameters.put("date", comment.getDate());
         Number key = jdbcInsert.executeAndReturnKey(new
                 MapSqlParameterSource(parameters));
