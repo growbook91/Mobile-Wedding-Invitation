@@ -20,7 +20,10 @@ public class MemoryCommentRepositoryTest {
 
     @Test
     public void create(){
-        Comment comment = new Comment("이강민", "여러분의 결혼을 축복합니다", "1234");
+        Comment comment = new Comment();
+        comment.setPassword("1234");
+        comment.setName("이강민");
+        comment.setContent("여러분의 결혼을 축복합니다.");
         repository.create(comment);
 
 //        Comment comment2 = new Comment("이지혜", "아주 감사합니다", "2023.10.20");
@@ -31,7 +34,10 @@ public class MemoryCommentRepositoryTest {
 
     @Test
     public void delete() {
-        Comment comment = new Comment("이강민", "여러분의 결혼을 축복합니다", "1234");
+        Comment comment = new Comment();
+        comment.setPassword("1234");
+        comment.setName("이강민");
+        comment.setContent("여러분의 결혼을 축복합니다.");
         repository.create(comment);
         Long commentId = comment.getId();
         repository.delete(commentId);
@@ -43,10 +49,16 @@ public class MemoryCommentRepositoryTest {
 
     @Test
     public void findAll(){
-        Comment comment1 = new Comment("이강민", "여러분의 결혼을 축복합니다",  "1234");
+        Comment comment1 = new Comment();
+        comment1.setPassword("1234");
+        comment1.setName("이강민");
+        comment1.setContent("여러분의 결혼을 축복합니다.");
         repository.create(comment1);
 
-        Comment comment2 = new Comment("이지혜", "아주 감사합니다",  "1234");
+        Comment comment2 = new Comment();
+        comment2.setPassword("1234");
+        comment2.setName("이지혜");
+        comment2.setContent("감사합니다.");
         repository.create(comment2);
 
         List<Comment> result = repository.findAll();
