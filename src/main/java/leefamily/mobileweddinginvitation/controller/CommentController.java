@@ -38,7 +38,9 @@ public class CommentController {
     @PostMapping(value = "/comment/new")
     public String create(CommentForm form) {
         // FIXME : 얘도...흠...어떻게 parameter를 넣어주는 거지..?
-        Comment comment = new Comment(form.getName(), form.getContent(), form.getPassword());
+        Comment comment = new Comment();
+        comment.setContent(form.getContent());
+        comment.setPassword(form.getPassword());
         comment.setName(form.getName());
         commentService.writeComment(comment);
         return "redirect:/";

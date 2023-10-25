@@ -529,8 +529,9 @@
                     <div class="c-guestbook gothic">
                         <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="item" th:each="comment : ${comments}">
-                                <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span class="icon"><svg
-                                            width="10px" height="10px" viewBox="0 0 15 15" fill="black"
+                            <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
+                                    class="icon" th:onclick="|window.location.href='@{/comment/{id}(id=${comment.id})}'|"><svg
+                                    width="10px" height="10px" viewBox="0 0 15 15" fill="black"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">

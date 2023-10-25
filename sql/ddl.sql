@@ -1,4 +1,4 @@
-	drop table if exists member CASCADE
+	drop table if exists comment CASCADE;
 
 	create table comment
     (

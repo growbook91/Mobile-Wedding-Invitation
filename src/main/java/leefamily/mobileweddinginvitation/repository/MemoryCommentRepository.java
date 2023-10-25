@@ -7,7 +7,7 @@ import java.lang.reflect.Member;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-@Repository
+
 public class MemoryCommentRepository implements CommentRepository{
     private static Map<Long, Comment> memoryDB = new HashMap<>();
     private static long sequence = 0L;
