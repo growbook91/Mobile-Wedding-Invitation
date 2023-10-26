@@ -1,20 +1,70 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <body>
-<div class="container">
-<!--    어떻게 매칭을 하는 거지..?-->
-    <form action="/comment/new" method="post">
-        <div class="form-group">
-            <label for="name">이름</label>
-            <input type="text" id="name" name="name" placeholder="이름">
-            <label for="password">비밀번호</label>
-            <input type="password" id="password" name="password" placeholder="비밀번호">
-            <label for="content">내용</label>
-            <input type="text" id="content" name="content" placeholder="내용을
-입력하세요">
+    <div class="container">
+        <!--    어떻게 매칭을 하는 거지..?-->
+        <div class="c-guestbook-header"><span>방명록</span>
+            <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                        </path>
+                    </svg></span></div>
         </div>
-        <button type="submit">등록</button>
-    </form>
-</div> <!-- /container -->
+
+        <div class="c-guestbook-modal-inner">
+            <form action="/comment/new" method="post">
+                <div class="form-group">
+            <table>
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" id="name" name="name" placeholder="" maxlength="12"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" id="password" name="password" placeholder="" maxlength="254"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea id="content" name="content" maxlength="100" placeholder="100자 이내로 작성해주세요"></textarea></td>
+                    </tr>
+                </tbody>
+            </table> <button class="btn-submit">
+                작성하기
+            </button>
+                </div>
+            </form>
+        </div>
+<!--        <form action="/comment/new" method="post">-->
+<!--            <div class="form-group">-->
+<!--                <label for="name">이름</label>-->
+<!--                <input type="text" id="name" name="name" placeholder="이름">-->
+<!--                <label for="password">비밀번호</label>-->
+<!--                <input type="password" id="password" name="password" placeholder="비밀번호">-->
+<!--                <label for="content">내용</label>-->
+<!--                <input type="text" id="content" name="content" placeholder="내용을-->
+<!--입력하세요">-->
+<!--            </div>-->
+<!--            <button type="submit">작성하기</button>-->
+<!--        </form>-->
+    </div> <!-- /container -->
 </body>
+<style>
+    .c-guestbook-header {
+        padding: 16px 20px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #000;
+    }
+
+    .container {
+        font-size: .86rem;
+    }
+</style>
+
 </html>
