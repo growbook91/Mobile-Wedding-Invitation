@@ -640,8 +640,13 @@ td {
 
 .c-guestbook .tools>.writing {
     display: inline-block;
-    width: 5.5rem;
+    width: 7rem;
     padding: 8px 0;
+}
+
+.c-guestbook .pagination-wrap {
+    width: calc(100% - 8rem);
+    display: inline-block;
 }
 /* guest book wrap */
 
