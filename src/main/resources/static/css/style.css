@@ -586,7 +586,7 @@ td {
 
 .c-guestbook {
     margin: 0;
-    font-size: .7rem;
+    font-size: .86rem;
 }
 
 .c-guestbook .comments {
@@ -625,6 +625,13 @@ td {
 
 .c-guestbook .item .text {
     line-height: 1.25rem;
+}
+
+.c-guestbook .item .date {
+    margin-right: 2px;
+    color: #aaa;
+    font-size: .625rem;
+    vertical-align: middle;
 }
 
 .c-guestbook .tools {
