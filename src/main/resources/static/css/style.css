@@ -25,7 +25,7 @@ html {
     --btn-dark-bg-color: #f9f9f9;
     --btn-dark-text-color: #111;
     --btn-dark-border-color: #eaeaea;
-    --font-size: 18px;
+    --font-size: 16px;
     --common-margin-lr: 2rem;
     --calendar-margin-lr: 3rem;
     /* --font-regular: IropkeBatangM; */
@@ -151,7 +151,7 @@ body {
 
 .paragraph-wrap .text {
     margin: 20px 1rem 0;
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 /* word */
@@ -168,12 +168,12 @@ body {
 }
 
 .text-box2 {
-    font-size: .8rem;
+    font-size: .9rem;
     line-height: 2rem;
     width: 260px;
     display: inline-block;
     white-space-collapse: collapse;
-    margin: 16px 1rem 3.2rem;
+    margin: 16px 1rem 1.2rem;
 }
 
 .photo-div-box {
