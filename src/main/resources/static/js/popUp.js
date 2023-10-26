@@ -7,7 +7,7 @@ $(window).load(function(){
     console.log("팝업 확인",popup_cookie);
 
     if(!popup_cookie){
-        openModal();
+        openModal("popup");
     }
 
      //화면에 표시된 배경 레이어를 클릭한 경우
@@ -19,11 +19,11 @@ $(window).load(function(){
 });
 
 
-function openModal(){
+function openModal(page){
     $("#background").fadeIn(50);  //배경 레이어
     $("#front").fadeIn(50);  //이미지 레이어
 
-    let src = "http://localhost:8080/popup";
+    let src = "http://localhost:8080/" + page;
     let iframeSrc = "<iframe style='width: 100%; height: 100%; z-index:999;' src='" + src +"'/>"; //이미지 태그 구성
     $('#front').html(iframeSrc);
 }
@@ -45,5 +45,6 @@ function getCookie(name){
      return "";
 
 }
+
 
 
