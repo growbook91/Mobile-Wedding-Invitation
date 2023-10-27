@@ -20,6 +20,8 @@ $(window).load(function(){
 
 
 function openModal(page){
+    console.log(page);
+
     $("#background").fadeIn(50);  //배경 레이어
     $("#front").fadeIn(50);  //이미지 레이어
 

@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href="/css/animation.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="/js/indexJs.js"></script>
+<script type="text/javascript" src="/js/popUp.js"></script>
 
 <body>
 
@@ -530,7 +530,9 @@
                         <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="item" th:each="comment : ${comments}">
                             <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
-                                    class="icon" th:onclick="|window.location.href='@{/comment/{id}(id=${comment.id})}'|"><svg
+                                    class="icon" th:onclick="|window.location.href='@{/comment/{id}(id=${comment.id})}'|">
+<!--                                |window.location.href='@{/comment/{id}(id=${comment.id})}'|-->
+                                <svg
                                     width="10px" height="10px" viewBox="0 0 15 15" fill="black"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -544,7 +546,7 @@
                         </div>
                         <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="pagination-wrap"><!----></div>
-                            <div class="writing"><button class="m-button gothic" onclick="window.location.href='/comment'">
+                            <div class="writing"><button class="m-button gothic" onclick="openModal('comment')">
                                     작성하기
                                 </button></div>
                         </div> <!---->
