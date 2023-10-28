@@ -13,7 +13,7 @@ public class MemoryCommentRepository implements CommentRepository{
     private static long sequence = 0L;
     @Override
     public Comment create(Comment comment) {
-        // TODO : 자동적으로 날짜도 할당해줘야 한다.
+        // 자동적으로 날짜도 할당해줘야 한다.
         SimpleDateFormat date = new SimpleDateFormat("yyyy.MM.dd");
         comment.setDate(date.format(new Date()));
         comment.setId(++sequence);
