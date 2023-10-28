@@ -45,7 +45,7 @@ public class CommentController {
         commentService.writeComment(comment);
         return "redirect:/";
     }
-    // TODO: 삭제하는 것
+    // 삭제하는 것
     // get으로 먼저 삭제 페이지를 보여줘야 하네.
     @GetMapping(value = "/comment/{id}")
     public String deleteForm(Model model, @PathVariable Integer id){

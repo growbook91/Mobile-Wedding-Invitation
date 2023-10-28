@@ -1,15 +1,198 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
+<style>
+    .v--modal-overlay .v--modal-box {
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .vue-dialog div {
+        box-sizing: border-box;
+    }
+
+    .c-guestbook-header {
+        padding: 16px 20px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #000;
+    }
+
+    .c-guestbook-header .btn-close {
+        float: right;
+        cursor: pointer;
+        margin: -1px 0 0 16px;
+    }
+
+    .c-guestbook-header .btn-close svg {
+        width: 12px;
+        height: 12px;
+        vertical-align: middle;
+    }
+
+    .c-guestbook-modal-wrap {
+        display: flex;
+        text-align: left;
+        background: #fff;
+        font-size: 1rem;
+        color: #544f4d;
+    }
+
+    .c-guestbook-modal-inner {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .c-guestbook-modal-inner table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        border-color: gray;
+    }
+
+    colgroup {
+        display: table-column-group;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    .c-guestbook-modal-inner tr {
+        border-top: 1px solid #eee;
+    }
+
+    .c-guestbook-modal-inner th {
+        padding: 0 0 0 20px;
+        height: 60px;
+        vertical-align: middle;
+        font-size: .9rem;
+        font-weight: 500;
+        color: #989898;
+    }
+
+    .c-guestbook-modal-inner td {
+        padding: 0;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+    }
+
+    .c-guestbook-modal-inner td input,
+    .c-guestbook-modal-inner td textarea {
+        border: none;
+        padding: 0 10px;
+        width: calc(100% - 20px);
+        height: 40px;
+        color: #000;
+        font-size: 16px;
+        font-family: var(--font-gothic);
+        letter-spacing: var(--font-gothic-spacing);
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: none;
+        -webkit-border-radius: 0;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    .c-guestbook-modal-inner td textarea {
+        width: calc(100% - 40px);
+        height: 96px;
+        margin: 20px;
+        padding: 12px 16px;
+        resize: vertical;
+        background: #fcfcfc;
+        line-height: 24px;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
+
+
+
+    .c-guestbook-modal-inner .btn-submit {
+        display: block;
+        margin: 0;
+        height: auto;
+        line-height: 60px;
+        /* background: var(--secondary-color); */
+        /* color: #fff; */
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        border: 0;
+    }
+
+    .c-guestbook-delete-modal button {
+        height: auto;
+        border-top: 1px solid #eaeaea;
+        background: #f9f9f9;
+        color: #111;
+    }
+</style>
+
 <body>
-<div class="container">
-    <!--    어떻게 매칭을 하는 거지..?-->
-    <form th:action="@{/comment/{id}(id=${id})}" method="post">
-        <div class="form-group">
-            <label for="password">비밀번호</label>
-            <input type="password" id="password" name="password" placeholder="비밀번호">
+
+<div class="v--modal-box v--modal vue-dialog c-guestbook-delete-modal"
+     style="top: 148px; left: 53px; width: 360px; height: auto;">
+    <div class="c-guestbook-header"><span>방명록 삭제</span>
+        <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                        </path>
+                    </svg></span></div>
+    </div>
+
+    <div onselectstart="return false" class="c-guestbook-modal-wrap">
+
+        <div class="c-guestbook-modal-inner">
+
+            <table>
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col>
+                </colgroup>
+                <form th:action="@{/comment/{id}(id=${id})}" method="post" id="deleteCommentForm">
+                    <tbody>
+
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" id="password" name="password" maxlength="15"></td>
+                    </tr>
+                    </tbody>
+                </form>
+            </table>
+            <button class="btn-submit" form="deleteCommentForm">
+                삭제하기
+            </button>
+
         </div>
-        <button type="submit">등록</button>
-    </form>
-</div> <!-- /container -->
+
+    </div> <!---->
+</div>
 </body>
+
 </html>

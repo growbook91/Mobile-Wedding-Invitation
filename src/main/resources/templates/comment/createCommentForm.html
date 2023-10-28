@@ -1,9 +1,162 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
+<style>
+    .v--modal-overlay .v--modal-box {
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .vue-dialog div {
+        box-sizing: border-box;
+    }
+
+    .c-guestbook-header {
+        padding: 16px 20px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #000;
+    }
+
+    .c-guestbook-header .btn-close {
+        float: right;
+        cursor: pointer;
+        margin: -1px 0 0 16px;
+    }
+
+    .c-guestbook-header .btn-close svg {
+        width: 12px;
+        height: 12px;
+        vertical-align: middle;
+    }
+
+    .c-guestbook-modal-wrap {
+        display: flex;
+        text-align: left;
+        background: #fff;
+        font-size: 1rem;
+        color: #544f4d;
+    }
+
+    .c-guestbook-modal-inner {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .c-guestbook-modal-inner table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        border-color: gray;
+    }
+
+    colgroup {
+        display: table-column-group;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    .c-guestbook-modal-inner tr {
+        border-top: 1px solid #eee;
+    }
+
+    .c-guestbook-modal-inner th {
+        padding: 0 0 0 20px;
+        height: 60px;
+        vertical-align: middle;
+        font-size: .9rem;
+        font-weight: 500;
+        color: #989898;
+    }
+
+    .c-guestbook-modal-inner td {
+        padding: 0;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+    }
+
+    .c-guestbook-modal-inner td input,
+    .c-guestbook-modal-inner td textarea {
+        border: none;
+        padding: 0 10px;
+        width: calc(100% - 20px);
+        height: 40px;
+        color: #000;
+        font-size: 16px;
+        font-family: var(--font-gothic);
+        letter-spacing: var(--font-gothic-spacing);
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: none;
+        -webkit-border-radius: 0;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    .c-guestbook-modal-inner td textarea {
+        width: calc(100% - 40px);
+        height: 96px;
+        margin: 20px;
+        padding: 12px 16px;
+        resize: vertical;
+        background: #fcfcfc;
+        line-height: 24px;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
+
+    
+
+    .c-guestbook-modal-inner .btn-submit {
+        display: block;
+        margin: 0;
+        height: auto;
+        line-height: 60px;
+        /* background: var(--secondary-color); */
+        /* color: #fff; */
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        border: 0;
+    }
+
+    .c-guestbook-delete-modal button {
+        height: auto;
+        border-top: 1px solid #eaeaea;
+        background: #f9f9f9;
+        color: #111;
+    }
+</style>
+
 <body>
-    <div class="container">
-        <!--    어떻게 매칭을 하는 거지..?-->
+
+    <div class="v--modal-box v--modal vue-dialog c-guestbook-delete-modal"
+        style="top: 148px; left: 53px; width: 360px; height: auto;">
         <div class="c-guestbook-header"><span>방명록</span>
             <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
                         xmlns="http://www.w3.org/2000/svg">
@@ -13,58 +166,46 @@
                     </svg></span></div>
         </div>
 
-        <div class="c-guestbook-modal-inner">
-            <form action="/comment/new" method="post">
-                <div class="form-group">
-            <table>
-                <colgroup>
-                    <col style="width: 100px;">
-                    <col>
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <th>이름</th>
-                        <td><input type="text" id="name" name="name" placeholder="" maxlength="12"></td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호</th>
-                        <td><input type="password" id="password" name="password" placeholder="" maxlength="254"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><textarea id="content" name="content" maxlength="100" placeholder="100자 이내로 작성해주세요"></textarea></td>
-                    </tr>
-                </tbody>
-            </table> <button class="btn-submit">
-                작성하기
-            </button>
-                </div>
-            </form>
-        </div>
-<!--        <form action="/comment/new" method="post">-->
-<!--            <div class="form-group">-->
-<!--                <label for="name">이름</label>-->
-<!--                <input type="text" id="name" name="name" placeholder="이름">-->
-<!--                <label for="password">비밀번호</label>-->
-<!--                <input type="password" id="password" name="password" placeholder="비밀번호">-->
-<!--                <label for="content">내용</label>-->
-<!--                <input type="text" id="content" name="content" placeholder="내용을-->
-<!--입력하세요">-->
-<!--            </div>-->
-<!--            <button type="submit">작성하기</button>-->
-<!--        </form>-->
-    </div> <!-- /container -->
-</body>
-<style>
-    .c-guestbook-header {
-        padding: 16px 20px;
-        font-weight: 500;
-        font-size: 1.1rem;
-        color: #000;
-    }
+        <div onselectstart="return false" class="c-guestbook-modal-wrap">
 
-    .container {
-        font-size: .86rem;
+            <div class="c-guestbook-modal-inner">
+
+                <table>
+                    <colgroup>
+                        <col style="width: 100px;">
+                        <col>
+                    </colgroup>
+                    <form action="/comment/new" method="post" id="commentForm">
+                    <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <td><input type="text" id="name" name="name" maxlength="12" placeholder=""></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td><input type="password" id="password" name="password" maxlength="15"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><textarea maxlength="100" id="content" name="content" placeholder="100자 이내로 작성해주세요"></textarea></td>
+                        </tr>
+                    </tbody>
+                    </form>
+                </table>
+                    <button class="btn-submit" form="commentForm" onclick="refresh()">
+                    작성하기
+                </button>
+
+            </div>
+
+        </div> <!---->
+    </div>
+</body>
+<script type="text/javascript">
+    function refresh(){
+    console.log("refresh function is executed");
+<!--    window.opener.location.reload();    //부모창 reload-->
+    window.close();    //현재 팝업창 Close
     }
-</style>
+</script>
 
 </html>

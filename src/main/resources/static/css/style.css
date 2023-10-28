@@ -848,7 +848,8 @@ ul { list-style: none; }
     margin-left: -188px;
     display: none;
     width: 369px;
-    height: 507px;
+    height: 100%;
+    overflow: hidden;
     margin-top: -230px;
     background-color: white;
     z-index: 999;
