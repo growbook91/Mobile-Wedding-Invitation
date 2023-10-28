@@ -11,9 +11,7 @@ $(window).load(function(){
      //화면에 표시된 배경 레이어를 클릭한 경우
      // FIXME : 이걸 함수로 만들어서 등록하려고 하는데 그게 안됨..
     $("#background").click(function(){
-        console.log("close");
-        $('#background').fadeOut(100);
-        $("#front").fadeOut(100);
+        closeModal();
     });
 });
 
@@ -29,7 +27,11 @@ function openModal(page){
     let iframeSrc = "<iframe style='width: 100%; height: 100%; z-index:999;' src='" + src +"'/>"; //이미지 태그 구성
     $('#front').html(iframeSrc);
 }
-
+function closeModal(){
+        console.log("close");
+        $('#background').fadeOut(100);
+        $("#front").fadeOut(100);
+}
 function getCookie(name){
      var nameOfCookie = name + "=";
      var x = 0;
