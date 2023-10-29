@@ -314,13 +314,21 @@
                         <div id="map"></div>
                     </div>
                     <div>
+                        <!--37.572892, 127.0009225-->
                         <div class="c-map-navi gothic">
-                            <div class="navi">
-                                <img src="/images/icon_navermap.png"> <span>네이버 지도</span>
+                            <div class="navi"
+                                onclick="openNaverMapApp(location.href='://place?lat=37.572892&lng=127.0009225&name=%ED%95%9C%EA%B5%AD%EA%B8%B0%EB%8F%85%EC%97%B0%ED%95%A9%ED%9A%8C%EA%B4%80%0A&appname=kangminlovesjihye.ddns.net')">
+                                <img src="/images/icon_navermap.png">
+                                <span>네이버 지도</span>
                             </div>
-                            <div class="navi"><img src="/images/icon_kakaonavi.png"> <span>카카오
-                                    내비</span></div>
-                            <div class="navi"><img src="/images/icon_tmap.png"> <span>티맵</span></div>
+                            <div class="navi">
+                                <img src="/images/icon_kakaonavi.png">
+                                <span>카카오 내비</span>
+                            </div>
+                            <div class="navi">
+                                <img src="/images/icon_tmap.png">
+                                <span>티맵</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -548,7 +556,6 @@
                             <div class="item" th:each="comment : ${comments}">
                                 <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
                                         class="icon" th:commentId="${comment.id}"
-                                        
                                         th:onclick="openModal('comment/' + this.getAttribute('commentId'))">
                                         <!--FIXME : 나중에 ajax로 고치자-->
                                         <!--                                |window.location.href='@{/comment/{id}(id=${comment.id})}'|-->
@@ -725,6 +732,44 @@
 
 
         });
+        // os 체크
+        function checkMobile() {
+
+            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+
+            if (varUA.indexOf('android') > -1) {
+                //안드로이드
+                return "android";
+            } else if (varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1) {
+                //IOS
+                return "ios";
+            } else {
+                //아이폰, 안드로이드 외
+                return "other";
+            }
+
+        }
+
+        //네이버 지도 open
+        function openNaverMapApp(url) {
+            var os = checkModbile();
+            console.log(os);
+            if(os=="ios"){
+                var clickedAt = +new Date();
+
+                location.href = 'nmap'+ url;
+
+                setTimeout(function () {
+                    if (+new Date() - clickedAt < 2000) {
+                        location.href = 'http://itunes.apple.com/app/id311867728?mt=8';
+                    }
+                }, 1500);
+            }
+            else if(os=="android"){
+                location.href = 'intent' + url + '#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end'
+            }
+
+        }
     </script>
 </body>
 

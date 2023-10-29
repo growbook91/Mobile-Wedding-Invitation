@@ -32,6 +32,13 @@ function closeModal(){
         $('#background').fadeOut(100);
         $("#front").fadeOut(100);
 }
+
+function closeAndReload(){
+        parent.window.closeModal();
+        parent.window.location.reload();
+}
+
+
 function getCookie(name){
      var nameOfCookie = name + "=";
      var x = 0;

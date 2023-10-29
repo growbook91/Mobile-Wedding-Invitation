@@ -191,7 +191,7 @@
                     </tbody>
                     </form>
                 </table>
-                    <button class="btn-submit" form="commentForm" onclick="refresh()">
+                    <button class="btn-submit" form="commentForm" onclick="closeAndReload()">
                     작성하기
                 </button>
 
@@ -200,12 +200,10 @@
         </div> <!---->
     </div>
 </body>
-<script type="text/javascript">
-    function refresh(){
-    console.log("refresh function is executed");
-<!--    window.opener.location.reload();    //부모창 reload-->
-    window.close();    //현재 팝업창 Close
+<script>
+    function closeAndReload(){
+        parent.window.closeModal();
+        parent.window.location.reload();
     }
 </script>
-
 </html>
