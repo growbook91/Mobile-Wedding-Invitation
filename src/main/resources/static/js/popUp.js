@@ -9,7 +9,6 @@ $(window).load(function(){
     }
 
      //화면에 표시된 배경 레이어를 클릭한 경우
-     // FIXME : 이걸 함수로 만들어서 등록하려고 하는데 그게 안됨..
     $("#background").click(function(){
         closeModal();
     });
@@ -23,6 +22,7 @@ function openModal(page){
     $("#front").fadeIn(50);  //이미지 레이어
 
     let src = "http://localhost:8080/" + page;
+//    let src = "http://kangminlovesjihye.ddns.net/" + page;
     // FIXME : 이거 height가 자동조절이 안돼.
     let iframeSrc = "<iframe style='width: 100%; height: 100%; z-index:999;' src='" + src +"'/>"; //이미지 태그 구성
     $('#front').html(iframeSrc);

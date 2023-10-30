@@ -546,7 +546,7 @@ td {
     padding: 8px 0;
     text-align: center;
     cursor: pointer;
-    z-index: 999;
+    z-index: 997;
     color: var(--text-dark-color);
     background: var(--third-bg-color);
     border: 1px solid var(--border-dark-color);
