@@ -43,7 +43,7 @@ public class CommentController {
         comment.setPassword(form.getPassword());
         comment.setName(form.getName());
         commentService.writeComment(comment);
-        return "redirect:/";
+        return "blank";
     }
     // 삭제하는 것
     // get으로 먼저 삭제 페이지를 보여줘야 하네.
@@ -59,7 +59,7 @@ public class CommentController {
         System.out.println("okok");
         Optional<Comment> result = commentService.getCommentById(id);
         result.ifPresent(comment -> commentService.deleteComment(comment, form.getPassword()));
-        return "redirect:/";
+        return "blank";
     }
 
 
