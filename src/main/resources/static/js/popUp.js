@@ -24,8 +24,9 @@ function openModal(page){
     let src = "http://localhost:8080/" + page;
 //    let src = "http://kangminlovesjihye.ddns.net/" + page;
     // FIXME : 이거 height가 자동조절이 안돼.
-    let iframeSrc = "<iframe style='width: 100%; height: 100%; z-index:999;' src='" + src +"'/>"; //이미지 태그 구성
+    let iframeSrc = "<iframe style='position: absolute; width: 100%; height: 100%; z-index:999;' src='" + src +"' onload='resizeIframe(this)'/>"; //이미지 태그 구성
     $('#front').html(iframeSrc);
+//    $('#front').
 }
 function closeModal(){
         console.log("close");
@@ -55,6 +56,13 @@ function getCookie(name){
      }
      return "";
 
+}
+//iframe과 #front의 height를 재조정하는 함수
+function resizeIframe(obj) {
+    console.log("resizeIframe is executed");
+    obj.style.height = (obj.contentWindow.document.body.scrollHeight + 20)+ 'px';
+    console.log(obj.style.height);
+    $('#front').css('height', obj.style.height);
 }
 
 
