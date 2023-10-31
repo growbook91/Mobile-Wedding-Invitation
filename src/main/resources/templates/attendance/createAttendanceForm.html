@@ -1,68 +1,290 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="/css/attendance.css">
+
 <style>
+    .v--modal-overlay.scrollable .v--modal-box {
+        margin-bottom: 2px;
+    }
 
+    .v--modal-overlay .v--modal-box {
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .rsvp-dialog {
+        border: 5px solid var(--border-color);
+    }
+
+    .v--modal {
+        background-color: white;
+        text-align: left;
+        border-radius: 3px;
+
+        padding: 0;
+    }
+
+    .rsvp-header {
+        padding: 16px 24px 0;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .rsvp-header .btn-close {
+        float: right;
+        cursor: pointer;
+        margin: -1px 0 0 16px;
+    }
+
+    .rsvp-modal-wrap {
+        display: flex;
+        text-align: left;
+        background: #fff;
+        font-size: 1rem;
+        color: #333;
+        background: unset;
+    }
+
+    .rsvp-modal-inner {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 20px 24px 28px;
+    }
+
+    .rsvp-modal-inner table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        border-color: gray;
+    }
+
+    colgroup {
+        display: table-column-group;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    .rsvp-modal-inner th {
+        vertical-align: middle;
+        font-size: .9rem;
+        font-weight: 400;
+        height: 45px;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+    }
+
+    .rsvp-modal-inner .radio div {
+        width: calc((100% - 8px) / 2);
+        margin-right: 4px;
+        float: left;
+    }
+
+    .rsvp-modal-inner .radio input[type=radio] {
+        display: none;
+    }
+
+    .rsvp-modal-inner td input {
+        border: none;
+        padding: 0 10px;
+        width: calc(100% - 20px);
+        height: 40px;
+        color: #000;
+        font-size: .85rem;
+        font-weight: 400;
+        outline: none;
+        background: #f9f9f9;
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: none;
+        -webkit-border-radius: 0;
+        letter-spacing: var(--font-gothic-spacing);
+    }
+
+    .rsvp-modal-inner .radio input:checked+label.blue-fill {
+        color: #fff;
+        background: #80a6e5;
+        border: 1px solid #80a6e5;
+    }
+
+    .rsvp-modal-inner .radio input:checked+label.red-fill {
+        color: #fff;
+        background: #e49caa;
+        border: 1px solid #e49caa;
+    }
+
+    .rsvp-modal-inner .radio input:checked+label.black {
+        background: #fff;
+        color: #666;
+        border: 1px solid #999;
+    }
+
+    .rsvp-modal-inner .radio input:checked+label {
+        color: #aaa;
+        width: 100%;
+        font-weight: 500;
+    }
+
+    .rsvp-modal-inner .radio label {
+        text-align: center;
+        border: 1px solid #f9f9f9;
+        background: #f9f9f9;
+        height: 55px;
+        line-height: 55px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: .85rem;
+        color: #666;
+        width: 100%;
+        height: 40px;
+        line-height: 38px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .rsvp-modal-inner .btn-submit {
+        display: block;
+        margin-top: 24px;
+        height: 48px;
+        line-height: 48px;
+        border: 1px solid #ddd;
+        background: #f9f9f9;
+        color: #111;
+        border-radius: 4px;
+        font-size: .9rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .rsvp-modal-inner .dine div {
+        width: calc((100% - 12px) / 3);
+        margin-right: 4px;
+    }
 </style>
-<div class="v--modal-box v--modal rsvp-dialog gothic" style="top: 182px; left: 262px; width: 360px; height: auto;">
-    <div class="rsvp-header"><span>참석 의사 전달</span>
-        <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
-                    </path>
-                </svg></span></div>
-    </div>
-    <div onselectstart="return false" class="rsvp-modal-wrap">
-        <div class="rsvp-modal-inner">
-            <table>
-                <colgroup>
-                    <col style="width: 80px;">
-                    <col>
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <th>구분</th>
-                        <td>
-                            <div class="radio">
-                                <div><input type="radio" id="rsvp-side-gr" value="groom" checked="checked"> <label
-                                        for="rsvp-side-gr" class="blue-fill">신랑측</label></div>
-                                <div><input type="radio" id="rsvp-side-br" value="bride"> <label for="rsvp-side-br"
-                                        class="red-fill">신부측</label></div>
-                            </div>
-                        </td>
-                    </tr> <!---->
-                    <tr>
-                        <th>성함<!----></th>
-                        <td><input type="text" maxlength="12" placeholder=""></td>
-                    </tr> <!---->
-                    <tr>
-                        <th>참석인원<!----></th>
-                        <td><input type="number" placeholder="본인 포함 총 참석인원" min="1" max="100" pattern="[0-9]*"></td>
-                    </tr>
-                    <tr>
-                        <th>동행인</th>
-                        <td><input type="text" maxlength="30" placeholder="함께 오시는 분 성함"></td>
-                    </tr> <!---->
-                    <tr>
-                        <th>식사여부</th>
-                        <td>
-                            <div class="radio dine">
-                                <div><input type="radio" id="rsvp-attend-yes" checked="checked" value="true"> <label
-                                        for="rsvp-attend-yes" class="black">예정</label></div>
-                                <div><input type="radio" id="rsvp-attend-no" value="false"> <label for="rsvp-attend-no"
-                                        class="black">안함</label></div>
-                                <div><input type="radio" id="rsvp-attend-null" value=""> <label for="rsvp-attend-null"
-                                        class="black">미정</label></div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table> <!---->
-            <div class="btn-submit">
-                참석 의사 전달하기
-            </div>
-        </div>
-    </div> <!---->
-</div>
 
+<body>
+    <div class="v--modal-box v--modal rsvp-dialog gothic" style="top: 182px; left: 262px; width: 360px; height: auto;">
+        <div class="rsvp-header"><span>참석 의사 전달</span>
+            <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                        </path>
+                    </svg></span></div>
+        </div>
+        <div onselectstart="return false" class="rsvp-modal-wrap">
+            <div class="rsvp-modal-inner">
+                <table>
+                    <colgroup>
+                        <col style="width: 80px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>구분</th>
+                            <td>
+                                <div class="radio">
+                                    <div><input type="radio" name="rsvp-side" id="rsvp-side-gr" value="groom" checked="true"> <label
+                                            for="rsvp-side-gr" class="blue-fill">신랑측</label></div>
+                                    <div><input type="radio" name="rsvp-side" id="rsvp-side-br" value="bride"> <label for="rsvp-side-br"
+                                            class="red-fill">신부측</label></div>
+                                </div>
+                            </td>
+                        </tr> <!---->
+                        <tr>
+                            <th>성함<!----></th>
+                            <td><input type="text" maxlength="12" placeholder=""></td>
+                        </tr> <!---->
+                        <tr>
+                            <th>참석인원<!----></th>
+                            <td><input type="number" placeholder="본인 포함 총 참석인원" min="1" max="100" pattern="[0-9]*"></td>
+                        </tr>
+                        <tr>
+                            <th>동행인</th>
+                            <td><input type="text" maxlength="30" placeholder="함께 오시는 분 성함"></td>
+                        </tr> <!---->
+                        <tr>
+                            <th>식사여부</th>
+                            <td>
+                                <div class="radio dine">
+                                    <div><input type="radio" id="rsvp-attend-yes" name="rsvp-attend" checked="true" value="true"> <label
+                                            for="rsvp-attend-yes" class="black">예정</label></div>
+                                    <div><input type="radio" id="rsvp-attend-no" name="rsvp-attend" value="false"> <label
+                                            for="rsvp-attend-no" class="black">안함</label></div>
+                                    <div><input type="radio" id="rsvp-attend-null" name="rsvp-attend" value=""> <label
+                                            for="rsvp-attend-null" class="black">미정</label></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> <!---->
+                <div class="btn-submit">
+                    참석 의사 전달하기
+                </div>
+            </div>
+        </div> <!---->
+    </div>
+
+</body>
+<script>
+    /* Checkbox change event */
+$('input[name="rsvp-side"]').change(function() {
+    // 모든 radio를 순회한다.
+    $('input[name="rsvp-side"]').each(function() {
+        var value = $(this).val();              // value
+        var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
+        // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
+        // var checked = $(this).is('checked');
+        var $label = $(this).next();
+
+        if(checked)
+            $label.css('checked', true)
+        else
+            $label.css('checked', false);
+    });
+});
+
+
+$('input[name="rsvp-attend"]').change(function() {
+    // 모든 radio를 순회한다.
+    $('input[name="rsvp-attend"]').each(function() {
+        var value = $(this).val();              // value
+        var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
+        // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
+        // var checked = $(this).is('checked');
+        var $label = $(this).next();
+
+        if(checked)
+            $label.css('checked', true)
+        else
+            $label.css('checked', false);
+    });
+});
+</script>
 </html>
