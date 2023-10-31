@@ -3,6 +3,8 @@
 
 
 <link rel="stylesheet" type="text/css" href="/css/attendance.css">
+<script type="text/javascript" src="/js/modal.js"></script>
+
 <body>
 <div class="v--modal-box v--modal popup-dialog" style="top: 531px; left: 58px;">
     <div onselectstart="return false" class="popup-modal-wrap">
@@ -23,7 +25,7 @@
                 <div>
                     <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/place-marker--v1.png"></div>
                     <div><span>아펠가모 광화문 B2 로스타뇨홀</span></div></div></div> <div class="btn-submit gothic" onclick="location.href='/attendance/new'">참석 의사 전달하기</div>
-            <div class="skip-today gothic"><div class="check"></div> <div>오늘 하루 보지 않기</div>
+            <div class="skip-today gothic"><div class="check"></div> <div onclick="fnCloseDay();">오늘 하루 보지 않기</div>
             </div>
         </div>
     </div>
