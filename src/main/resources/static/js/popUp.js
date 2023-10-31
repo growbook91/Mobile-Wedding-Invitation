@@ -5,7 +5,7 @@ $(window).load(function(){
     console.log("팝업 확인",popup_cookie);
 
     if(!popup_cookie){
-        openModal("popup");
+        openModal("attendance");
     }
 
      //화면에 표시된 배경 레이어를 클릭한 경우
