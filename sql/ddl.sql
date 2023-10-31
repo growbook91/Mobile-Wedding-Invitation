@@ -9,3 +9,16 @@
         password varchar(255),
         primary key (id)
     );
+
+	drop table if exists attendance CASCADE;
+
+	create table attendance
+    (
+        id   bigint not null AUTO_INCREMENT,
+        side varchar(16),
+        name varchar(16),
+        companionName varchar(16),
+        food varchar(16),
+        totalNum int,
+        primary key (id)
+    );
