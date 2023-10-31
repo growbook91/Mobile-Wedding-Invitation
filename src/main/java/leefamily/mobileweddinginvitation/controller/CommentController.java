@@ -29,7 +29,7 @@ public class CommentController {
         model.addAttribute("comments", comments);
         return "index";
     }
-    @GetMapping(value = "/comment")
+    @GetMapping(value = "/comment/new")
     public String createForm() {
         return "comment/createCommentForm";
     }
@@ -63,10 +63,5 @@ public class CommentController {
     }
 
 
-    // 참석 의사 팝업 열기
-    // 작성자: kklee
-    @GetMapping(value = "/popup")
-    public String popup() {
-        return "AttendancePopup";
-    }
+
 }
