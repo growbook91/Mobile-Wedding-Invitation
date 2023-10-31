@@ -21,7 +21,7 @@ public class AttendanceController {
     // 작성자: kklee
     @GetMapping(value = "/attendance")
     public String popup() {
-        return "AttendancePopup";
+        return "attendance/attendancePopup";
     }
 
     @GetMapping(value = "/attendance/new")

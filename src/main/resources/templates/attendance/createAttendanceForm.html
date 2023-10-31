@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+
+</style>
+<div class="v--modal-box v--modal rsvp-dialog gothic" style="top: 182px; left: 262px; width: 360px; height: auto;">
+    <div class="rsvp-header"><span>참석 의사 전달</span>
+        <div class="btn-close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                    </path>
+                </svg></span></div>
+    </div>
+    <div onselectstart="return false" class="rsvp-modal-wrap">
+        <div class="rsvp-modal-inner">
+            <table>
+                <colgroup>
+                    <col style="width: 80px;">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>구분</th>
+                        <td>
+                            <div class="radio">
+                                <div><input type="radio" id="rsvp-side-gr" value="groom" checked="checked"> <label
+                                        for="rsvp-side-gr" class="blue-fill">신랑측</label></div>
+                                <div><input type="radio" id="rsvp-side-br" value="bride"> <label for="rsvp-side-br"
+                                        class="red-fill">신부측</label></div>
+                            </div>
+                        </td>
+                    </tr> <!---->
+                    <tr>
+                        <th>성함<!----></th>
+                        <td><input type="text" maxlength="12" placeholder=""></td>
+                    </tr> <!---->
+                    <tr>
+                        <th>참석인원<!----></th>
+                        <td><input type="number" placeholder="본인 포함 총 참석인원" min="1" max="100" pattern="[0-9]*"></td>
+                    </tr>
+                    <tr>
+                        <th>동행인</th>
+                        <td><input type="text" maxlength="30" placeholder="함께 오시는 분 성함"></td>
+                    </tr> <!---->
+                    <tr>
+                        <th>식사여부</th>
+                        <td>
+                            <div class="radio dine">
+                                <div><input type="radio" id="rsvp-attend-yes" checked="checked" value="true"> <label
+                                        for="rsvp-attend-yes" class="black">예정</label></div>
+                                <div><input type="radio" id="rsvp-attend-no" value="false"> <label for="rsvp-attend-no"
+                                        class="black">안함</label></div>
+                                <div><input type="radio" id="rsvp-attend-null" value=""> <label for="rsvp-attend-null"
+                                        class="black">미정</label></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> <!---->
+            <div class="btn-submit">
+                참석 의사 전달하기
+            </div>
+        </div>
+    </div> <!---->
+</div>
+
+</html>
