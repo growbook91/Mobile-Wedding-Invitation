@@ -20,9 +20,10 @@ public class CommentService {
     }
 
     /*새로운 댓글 작성*/
-    public void writeComment(Comment comment){
+    public Long writeComment(Comment comment){
         validateInputs(comment);
         commentRepository.create(comment);
+        return comment.getId();
     }
 
     public void deleteComment(Comment comment, String input){
