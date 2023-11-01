@@ -32,11 +32,7 @@ public class AttendanceController {
     // 참석 여부 조사
     @PostMapping(value = "/attendance/new")
     public String create(AttendanceForm form) {
-        // TODO : 여기 수정
         Attendance attendance = new Attendance();
-//        attendance.setContent(form.getContent());
-//        attendance.setPassword(form.getPassword());
-//        attendance.setName(form.getName());
         attendanceService.writeAttendance(attendance);
         return "blank";
     }
