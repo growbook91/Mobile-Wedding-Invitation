@@ -177,9 +177,13 @@ body {
 }
 
 .photo-div-box {
-    height: 220px;
+    /*height: 220px;*/
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+#greeting-photo {
+    scale: 1.2;
 }
 
 .font-size-8 {
