@@ -1,10 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-
-
 <link rel="stylesheet" type="text/css" href="/css/attendance.css">
-<script type="text/javascript" src="/js/modal.js"></script>
 
 <body>
 <div class="v--modal-box v--modal popup-dialog" style="top: 531px; left: 58px;">
@@ -19,33 +16,31 @@
         <div class="popup-modal-inner"><div class="title">참석 의사 전달</div>
             <div class="content">축하의 마음으로 참석해주시는<br>모든 분들을 귀하게 모실 수 있도록<br>참석 의사를 전달 부탁드립니다.</div>
             <div class="info gothic"><div><div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/hearts.png"></div>
-                <div style="font-weight: bold;">신랑 최도현 &amp; 신부 이하나</div>
+                <div style="font-weight: bold;">신랑 <span class="boy_full_name"></span> &amp; 신부 <span class="girl_full_name"></span></div>
             </div>
                 <div>
-                    <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/calendar--v1.png"></div> <div><span>2023년</span>10월 28일 토요일 오후 1시 30분</div></div>
+                    <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/calendar--v1.png"></div> <div><span>2024년</span>6월 11 토요일 오후 12시 30분</div></div>
                 <div>
                     <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/place-marker--v1.png"></div>
-                    <div><span>아펠가모 광화문 B2 로스타뇨홀</span></div></div></div> <div class="btn-submit gothic" onclick="location.href='/attendance/new'">참석 의사 전달하기</div>
+                    <div><span>한국기독교연합회관 3층 아가페홀</span></div></div></div> <div class="btn-submit gothic" onclick="location.href='/attendance/new'">참석 의사 전달하기</div>
             <div class="skip-today gothic"><div class="check"></div> <div onclick="fnCloseDay();">오늘 하루 보지 않기</div>
             </div>
         </div>
     </div>
 </div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/modal.js"></script>
+<script>
+    //초기 설정
+    var girl_full_name = "이지혜";
+    var boy_full_name = "이강민";
 
-<!--    <div class="container">-->
-<!--    &lt;!&ndash;    어떻게 매칭을 하는 거지..?&ndash;&gt;-->
-<!--        <form action="/comment/new" method="post">-->
-<!--            <div class="form-group">-->
-<!--                <label for="name">이름</label>-->
-<!--                <input type="text" id="name" name="name" placeholder="이름">-->
-<!--                <label for="password">비밀번호</label>-->
-<!--                <input type="password" id="password" name="password" placeholder="비밀번호">-->
-<!--                <label for="content">내용</label>-->
-<!--                <input type="text" id="content" name="content" placeholder="내용을-->
-<!--    입력하세요">-->
-<!--            </div>-->
-<!--            <button type="submit">등록</button>-->
-<!--        </form>-->
-<!--    </div> &lt;!&ndash; /container &ndash;&gt;-->
+    $(window).load(function () {
+      console.log("temporary function on attendancePopup.html is executed");
+      $(".boy_full_name").text(boy_full_name);
+      $(".girl_full_name").text(girl_full_name);
+    });
+</script>
 </body>
+
 </html>
