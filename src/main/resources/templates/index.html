@@ -12,8 +12,6 @@
 
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href="/css/animation.css">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="/js/popUp.js"></script>
 
 <body>
 
@@ -27,7 +25,7 @@
             </div>
             <div class="name-wrap">
                 <div class="groom">
-                    <span class="name">이강민</span>
+                    <span class="name boy_full_name"></span>
                 </div>
                 <div class="divider">
                     <div>06</div>
@@ -35,7 +33,7 @@
                     <div>01</div>
                 </div>
                 <div class="bride">
-                    <span class="name">이지혜</span>
+                    <span class="name girl_full_name">이지혜</span>
                 </div>
 
             </div>
@@ -215,7 +213,7 @@
                         </div>
                     </div>
                     <div>
-                        강민 <span class="highlight" style="font-size: 11px;">♥</span> 지혜의 결혼식이
+                        <span class="boy_name"></span> <span class="highlight" style="font-size: 11px;">♥</span> <span class="girl_name"></span>의 결혼식이
                         <span><span class="highlight days">34 </span><span class="highlight">일</span>
                             <span>남았습니다.</span> <!----></span>
                     </div>
@@ -582,7 +580,8 @@
 
 
     </div>
-
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/js/popUp.js"></script>
     <script id="code">
         var mapOptions = {
             center: new naver.maps.LatLng(37.572892, 127.0009225),
@@ -600,6 +599,8 @@
     <script>
 
         //초기 설정
+        var girl_full_name = "이지혜";
+        var boy_full_name = "이강민";
         var girl_name = "지혜";
         var boy_name = "강민";
         var girl_father_name = "이한호";
@@ -614,6 +615,8 @@
             $(".girl_name").text(girl_name);
             $(".girl_father_name").text(girl_father_name);
             $(".girl_mother_name").text(girl_mother_name);
+            $(".boy_full_name").text(boy_full_name);
+            $(".girl_full_name").text(girl_full_name);
 
         });
 

@@ -250,41 +250,41 @@
             </div>
         </div> <!---->
     </div>
+    <script>
+        /* Checkbox change event */
+    $('input[name="rsvp-side"]').change(function() {
+        // 모든 radio를 순회한다.
+        $('input[name="rsvp-side"]').each(function() {
+            var value = $(this).val();              // value
+            var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
+            // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
+            // var checked = $(this).is('checked');
+            var $label = $(this).next();
 
+            if(checked)
+                $label.css('checked', true)
+            else
+                $label.css('checked', false);
+        });
+    });
+
+
+    $('input[name="rsvp-attend"]').change(function() {
+        // 모든 radio를 순회한다.
+        $('input[name="rsvp-attend"]').each(function() {
+            var value = $(this).val();              // value
+            var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
+            // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
+            // var checked = $(this).is('checked');
+            var $label = $(this).next();
+
+            if(checked)
+                $label.css('checked', true)
+            else
+                $label.css('checked', false);
+        });
+    });
+    </script>
 </body>
-<script>
-    /* Checkbox change event */
-$('input[name="rsvp-side"]').change(function() {
-    // 모든 radio를 순회한다.
-    $('input[name="rsvp-side"]').each(function() {
-        var value = $(this).val();              // value
-        var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
-        // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
-        // var checked = $(this).is('checked');
-        var $label = $(this).next();
 
-        if(checked)
-            $label.css('checked', true)
-        else
-            $label.css('checked', false);
-    });
-});
-
-
-$('input[name="rsvp-attend"]').change(function() {
-    // 모든 radio를 순회한다.
-    $('input[name="rsvp-attend"]').each(function() {
-        var value = $(this).val();              // value
-        var checked = $(this).prop('checked');  // jQuery 1.6 이상 (jQuery 1.6 미만에는 prop()가 없음, checked, selected, disabled는 꼭 prop()를 써야함)
-        // var checked = $(this).attr('checked');   // jQuery 1.6 미만 (jQuery 1.6 이상에서는 checked, undefined로 return됨)
-        // var checked = $(this).is('checked');
-        var $label = $(this).next();
-
-        if(checked)
-            $label.css('checked', true)
-        else
-            $label.css('checked', false);
-    });
-});
-</script>
 </html>
