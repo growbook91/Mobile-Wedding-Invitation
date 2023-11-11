@@ -34,9 +34,11 @@ public class AttendanceController {
     public String create(AttendanceForm form) {
         // TODO : 여기 수정
         Attendance attendance = new Attendance();
-//        attendance.setContent(form.getContent());
-//        attendance.setPassword(form.getPassword());
-//        attendance.setName(form.getName());
+        attendance.setSide(form.getSide());
+        attendance.setName(form.getName());
+        attendance.setTotalNum(form.getTotalNum());
+        attendance.setCompanionName(form.getCompanionName());
+        attendance.setFood(form.getFood());
         attendanceService.writeAttendance(attendance);
         return "blank";
     }
