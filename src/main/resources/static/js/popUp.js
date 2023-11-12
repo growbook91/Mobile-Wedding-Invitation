@@ -35,11 +35,12 @@ function openModal(page){
     //쿠키 불러오기
     var cookieCheck = getCookie("popupYN");
     //쿠키 데이터 설정 값 확인
-    if (cookieCheck != "N"){
+    if (!(cookieCheck == "Y" && page == "attendance")){
         $("#background").fadeIn(50);  //배경 레이어
         $("#front").fadeIn(50);  //이미지 레이어
 
         let src = "http://localhost:8080/" + page;
+//        let src = "http://kangminlovesjihye.ddns.net/" + page;
         // FIXME : 이거 width도 자동조절해야 할 것 같다.
         let iframeSrc = "<iframe style='position: absolute; width: 100%; height: 100%; z-index:999;' src='" + src +"' onload='resizeIframe(this)'/>"; //이미지 태그 구성
         $('#front').html(iframeSrc);

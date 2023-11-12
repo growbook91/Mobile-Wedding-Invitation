@@ -33,6 +33,11 @@ public class AttendanceController {
     @PostMapping(value = "/attendance/new")
     public String create(AttendanceForm form) {
         Attendance attendance = new Attendance();
+        attendance.setSide(form.getSide());
+        attendance.setName(form.getName());
+        attendance.setTotalNum(form.getTotalNum());
+        attendance.setCompanionName(form.getCompanionName());
+        attendance.setFood(form.getFood());
         attendanceService.writeAttendance(attendance);
         return "blank";
     }

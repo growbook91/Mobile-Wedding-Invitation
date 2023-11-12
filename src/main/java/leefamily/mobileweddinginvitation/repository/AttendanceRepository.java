@@ -21,7 +21,7 @@ public class AttendanceRepository {
     public Attendance create(Attendance attendance) {
         // ID 자동 부여
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
-        jdbcInsert.withTableName("attendence").usingGeneratedKeyColumns("id");
+        jdbcInsert.withTableName("attendance").usingGeneratedKeyColumns("id");
 
         Map<String, Object> parameters = new HashMap<>();
 

@@ -94,7 +94,7 @@
             </div>
 
             <div><!--연락하기 버튼 1--></div>
-            <button onclick="fnClickCalling()" class="call-btn">연락하기</button>
+            <button onclick="fnClickCalling()" class="m-button">연락하기</button>
 
 
 
@@ -220,11 +220,11 @@
         </div>
 
         <div class="gallery-wrap">
-            <div class="m-title fade-in" style="opacity:1; transform: translate(0px, 0px);">
+            <div class="m-title to-fade-in" style="opacity:1; transform: translate(0px, 0px);">
                 <div class="greetings-title"> 갤러리</div>
             </div>
 
-            <div class="gallery-container gothic fade-in">
+            <div class="gallery-container gothic to-fade-in">
                 <div class="gallery-square">
                     <div class="item">
                         <div class="ph"></div>
@@ -296,14 +296,14 @@
             </div>
             <div>
                 <div class="location-wrap">
-                    <div class="location-hall fade-in">
+                    <div class="location-hall to-fade-in">
                         <div>한국기독교연합회관 3층 아가페홀</div>
                     </div>
-                    <div class="location-address fade-in">
+                    <div class="location-address to-fade-in">
                         <div>서울 종로구 김상옥로 30</div>
                     </div>
                 </div>
-                <div class="map-inner fade-in"><!---->
+                <div class="map-inner to-fade-in"><!---->
                     <div>
                         <div id="map"></div>
                     </div>
@@ -311,15 +311,15 @@
                         <!--37.572892, 127.0009225-->
                         <div class="c-map-navi gothic">
                             <div class="navi"
-                                onclick="openNaverMapApp(location.href='://place?lat=37.572892&lng=127.0009225&name=%ED%95%9C%EA%B5%AD%EA%B8%B0%EB%8F%85%EC%97%B0%ED%95%A9%ED%9A%8C%EA%B4%80%0A&appname=kangminlovesjihye.ddns.net')">
+                                onclick="openNaverMapApp('://place?lat=37.572892&lng=127.0009225&name=%ED%95%9C%EA%B5%AD%EA%B8%B0%EB%8F%85%EC%97%B0%ED%95%A9%ED%9A%8C%EA%B4%80%0A&appname=kangminlovesjihye.ddns.net')">
                                 <img src="/images/icon_navermap.png">
                                 <span>네이버 지도</span>
                             </div>
-                            <div class="navi">
+                            <div class="navi" onclick="openKakaoMapApp()">
                                 <img src="/images/icon_kakaonavi.png">
                                 <span>카카오 내비</span>
                             </div>
-                            <div class="navi">
+                            <div class="navi" onclick="openTMapApp()">
                                 <img src="/images/icon_tmap.png">
                                 <span>티맵</span>
                             </div>
@@ -339,7 +339,7 @@
                         </div>
                     </div>
 
-                    <div class="box fade-in"><!---->
+                    <div class="box to-fade-in"><!---->
                         <div class="right">
                             <div class="title"><span>주차</span></div>
                             <div class="content">
@@ -356,10 +356,10 @@
         <div>
             <div>
                 <div class="notice-tab-wrap white">
-                    <div class="m-title fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="m-title to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                         <div class="greetings-title">예식정보 및 안내사항</div>
                     </div>
-                    <div class="ntab fade-in" style="overflow: hidden; opacity: 1; transform: translate(0px, 0px);">
+                    <div class="ntab to-fade-in" style="overflow: hidden; opacity: 1; transform: translate(0px, 0px);">
                         <div class="titles bg">
                             <div active="true" class="title" tab-page="1"><span>포토부스</span></div>
                             <div class="title" tab-page="2"><span>식사안내</span></div>
@@ -405,11 +405,11 @@
             <div>
                 <div class="notice-wrap"><!---->
                     <div class="boxs">
-                        <div class="box fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="box to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div>
-                                <div class="title fade-in" style="opacity: 1; transform: translate(0px, 0px);">피로연 안내
+                                <div class="title to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">피로연 안내
                                 </div>
-                                <div class="text fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                                <div class="text to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                                     <div>본식에 참석하기 어려운 분들을 위해<br>작은 피로연 자리를 마련하였습니다.<p></p>📍 아젠토피오레 컨벤션<br>10월 20일 (토)
                                         저녁 6시</div>
                                 </div>
@@ -421,14 +421,15 @@
         </div>
 
         <div>
-            <div class="rsvp-wrap fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+            <div class="rsvp-wrap to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                 <div class="card">
                     <div class="title"><span>참석 의사 전달</span></div>
                     <div class="text">
                         <div>축하의 마음으로 참석해주시는<br>모든 분들을 귀하게 모실 수 있도록<br>참석 의사를 전달 부탁드립니다.</div>
                     </div>
-                    <div class="m-button dark gothic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-check">
+                    <div class="m-button dark gothic" onclick="openModal('attendance/new')"><svg viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="icon icon-check">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>참석 의사 전달하기</div>
                 </div>
@@ -437,11 +438,11 @@
 
         <div>
             <div class="account-wrap">
-                <div class="m-title fade-in"><span>마음 전하실 곳</span></div>
-                <div class="content fade-in">
+                <div class="m-title to-fade-in"><span>마음 전하실 곳</span></div>
+                <div class="content to-fade-in">
                     <div>참석이 어려우신 분들을 위해<br>계좌번호를 기재하였습니다.<br>너그러운 마음으로 양해 부탁드립니다.</div>
                 </div>
-                <div class="c-account fade-in">
+                <div class="c-account to-fade-in">
                     <div class="item">
                         <div class="title">
                             <div>
@@ -540,13 +541,13 @@
 
             <div>
                 <div class="guestbook-wrap">
-                    <div class="m-title fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="m-title to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                         <div class="greetings-title">
                             방명록
                         </div>
                     </div>
                     <div class="c-guestbook gothic">
-                        <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="comments to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="item" th:each="comment : ${comments}">
                                 <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
                                         class="icon" th:commentId="${comment.id}"
@@ -565,7 +566,7 @@
                             </div>
                             <!---->
                         </div>
-                        <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="tools to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="pagination-wrap"><!----></div>
                             <div class="writing"><button class="m-button gothic" onclick="openModal('comment/new')">
                                     작성하기
@@ -576,10 +577,21 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=bhncyvb1zh"></script>
+
+    //script 코드
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="/js/popUp.js"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=bhncyvb1zh"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"
+        integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH"
+        crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('7c190dd2845bc8a32ad98c3f63a6f590');
+    </script>
+
+    // naver embedded map api
     <script id="code">
         var mapOptions = {
             center: new naver.maps.LatLng(37.572892, 127.0009225),
@@ -695,7 +707,7 @@
         //연락하기 버튼 클릭 기능
         function fnClickCalling() {
             console.log("연락하기");
-            window.open("/home", "test",);
+
             document.location.href = 'tel:01056318638';
         }
 
@@ -751,25 +763,42 @@
 
         //네이버 지도 open
         function openNaverMapApp(url) {
-            var os = checkModbile();
+            var os = checkMobile();
             console.log(os);
-            if(os=="ios"){
+            if (os == "ios") {
                 var clickedAt = +new Date();
 
-                location.href = 'nmap'+ url;
+                window.location.href = 'nmap' + url;
 
                 setTimeout(function () {
                     if (+new Date() - clickedAt < 2000) {
-                        location.href = 'http://itunes.apple.com/app/id311867728?mt=8';
+                        window.location.href = 'http://itunes.apple.com/app/id311867728?mt=8';
                     }
                 }, 1500);
             }
-            else if(os=="android"){
-                location.href = 'intent' + url + '#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end'
+            else if (os == "android") {
+                window.location.href = 'intent' + url + '#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end'
             }
 
         }
+        //FIXME : 여기 고쳐야 함.
+        // Tmap open
+        function openTMapApp() {
+            window.location.href='https://apis.openapi.sk.com/tmap/app/\
+            routes?appKey=Ygg0ufgp1U7T81XufFB7g1zh56C1sSjdaZFvncKa&name=한국기독교연합회관&lon=127.0009225&lat=37.572892\
+            ';
+        }
+        // 카카오 내비 open
+        function openKakaoMapApp() {
+            Kakao.Navi.start({
+                name: '한국기독교연합회관',
+                x: 127.0009225,
+                y: 37.572892,
+                coordType: 'wgs84',
+            });
+        }
     </script>
 </body>
+
 
 </html>

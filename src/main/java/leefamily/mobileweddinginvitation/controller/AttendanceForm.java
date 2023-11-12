@@ -7,6 +7,8 @@ public class AttendanceForm {
     private String companionName;
     private String food;
 
+    private Integer totalNum;
+
     public Long getId() {
         return id;
     }
@@ -55,5 +57,5 @@ public class AttendanceForm {
         this.totalNum = totalNum;
     }
 
-    private Integer totalNum;
+
 }
