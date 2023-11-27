@@ -20,11 +20,12 @@ http://kangminlovesjihye.ddns.net/
 ## 핵심 기능
 
 ### 참석 인원 조사
-![Alt text](image.png)
+<img src="image.png" width="200px">
+
 ### 댓글 생성, 삭제 기능
-![Alt text](image-2.png) |![Alt text](image-3.png) |![Alt text](image-4.png) |![Alt text](image-5.png)
+<img src="image-2.png" width="200px"> <img src="image-3.png" width="200px"> <img src="image-4.png" width="200px"> <img src="image-5.png" width="200px">
 ### Embedded Naver map
-![Alt text](image-1.png)
+<img src="image-1.png" width="200px">
 
 ## 참조
 
