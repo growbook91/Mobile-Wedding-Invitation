@@ -19,11 +19,12 @@ http://kangminlovesjihye.ddns.net/
 
 ## 핵심 기능
 
-- Naver map, Kakao Navi api
-- 참석 인원 조사
-- 댓글 생성, 삭제 기능
-
-
+### 참석 인원 조사
+![Alt text](image.png)
+### 댓글 생성, 삭제 기능
+![Alt text](image-2.png) |![Alt text](image-3.png) |![Alt text](image-4.png) |![Alt text](image-5.png)
+### Embedded Naver map
+![Alt text](image-1.png)
 
 ## 참조
 
