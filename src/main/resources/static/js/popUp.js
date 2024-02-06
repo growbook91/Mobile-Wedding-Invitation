@@ -97,8 +97,11 @@ function closeAndReload(){
 function resizeIframe(obj) {
     console.log("resizeIframe is executed");
     obj.style.height = (obj.contentWindow.document.body.scrollHeight + 20)+ 'px';
+    obj.style.width = (obj.contentWindow.document.body.scrollWidth + 20)+ 'px';
     console.log(obj.style.height);
+    console.log(obj.style.width);
     $('#front').css('height', obj.style.height);
+    $('#front').css('width', obj.style.width);
 }
 
 
