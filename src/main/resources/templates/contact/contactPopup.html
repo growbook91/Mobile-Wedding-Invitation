@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+
+	.vue-dialog div {
+		box-sizing: border-box;
+	}
+
+	.contact-modal-inner {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
+	.contact-modal-wrap {
+		display: flex;
+		text-align: left;
+		background: #fff;
+	}
+
+	.contact-modal-wrap .title {
+		display: block;
+		padding: 16px 0 12px;
+		text-align: center;
+		line-height: 1.5rem;
+		letter-spacing: 3px;
+		color: #111;
+		background: #f9f9f9;
+	}
+
+	.contact-modal-wrap .content {
+		padding: 1rem;
+		display: block;
+	}
+
+	.contact-modal-wrap .content>div>.cell {
+		flex: 1.5;
+		text-align: center;
+		letter-spacing: .5px;
+	}
+
+	.contact-modal-wrap .content>div>.cell:last-child {
+		flex: 1;
+	}
+
+	.contact-modal-wrap .content>div:first-child {
+		border: 0;
+	}
+
+	.contact-modal-wrap .content>div {
+		display: flex;
+		padding: 0;
+		margin-bottom: 4px;
+	}
+
+	.phone-square svg {
+		width: 20px;
+		height: 20px;
+		fill: #fff;
+	}
+
+	svg:not(:root) {
+		overflow-clip-margin: content-box;
+		overflow: hidden;
+	}
+
+	path[Attributes Style] {
+		d: path("M 331 277.211 l -21.973 21.973 c -29.239 29.239 -76.816 29.239 -106.055 0 L 181 277.211 L 25.721 431.49 C 31.588 434.297 38.073 436 45 436 h 422 c 6.927 0 13.412 -1.703 19.279 -4.51 L 331 277.211 Z");
+	}
+    hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+    .contact-modal-wrap .content hr {
+    height: 1px;
+    margin: 16px auto;
+    border: 0;
+    background: rgba(0,0,0,.06);
+}
+    .phone-square {
+    display: inline-block;
+    margin-top: -2px;
+    width: 30px;
+    height: 20px;
+    vertical-align: middle;
+    line-height: 0;
+    cursor: pointer;
+    text-align: center;
+}
+</style>
+
+<body>
+	<div class="v--modal-box v--modal vue-dialog" style="top: 212px; left: 257px; width: 370px; height: auto;">
+		<div onselectstart="return false" class="contact-modal-wrap">
+			<div class="contact-modal-inner">
+				<div class="title">
+					연락하기
+				</div>
+				<div class="content gothic">
+					<div>
+						<div class="cell" style="flex: 1.5 1 0%;"><span style="color: rgb(102, 142, 170);">신랑</span>
+						</div>
+						<div class="cell"><span>이강민</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling('01056318638')"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(102, 142, 170);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01056318638'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(102, 142, 170);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+					<div>
+						<div class="cell"><span style="color: rgb(102, 142, 170);">신랑 아버지</span></div>
+						<div class="cell"><span>이점용</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling(01024108633)"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(102, 142, 170);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01024108633'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(102, 142, 170);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+					<div>
+						<div class="cell"><span style="color: rgb(102, 142, 170);">신랑 어머니</span></div>
+						<div class="cell"><span>김미정</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling(01084398338)"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(102, 142, 170);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01084398338'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(102, 142, 170);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+					<hr>
+					<div>
+						<div class="cell" style="flex: 1.5 1 0%;"><span style="color: rgb(206, 131, 131);">신부</span>
+						</div>
+						<div class="cell"><span>이지혜</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling(01023254486)"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(206, 131, 131);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01023254486'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(206, 131, 131);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+					<div>
+						<div class="cell"><span style="color: rgb(206, 131, 131);">신부 아버지</span></div>
+						<div class="cell"><span>이한호</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling(01023074486)"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(206, 131, 131);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01023074486'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(206, 131, 131);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+					<div>
+						<div class="cell"><span style="color: rgb(206, 131, 131);">신부 어머니</span></div>
+						<div class="cell"><span>김명수</span></div>
+						<div class="cell"><span class="phone-square" onclick="fnClickCalling(01024074486)"><svg height="512" viewBox="0 0 128 128" width="512"
+									xmlns="http://www.w3.org/2000/svg" style="fill: rgb(206, 131, 131);">
+									<g id="icon">
+										<path
+											d="m54.048 43.653-3.928 6.122a7.725 7.725 0 0 0 .829 9.434l8.566 9.277 9.277 8.566a7.726 7.726 0 0 0 9.434.829l6.638-4.259 16.65 17.219-6.748 8.553a8.839 8.839 0 0 1 -9.277 3.039c-13.659-3.633-25.501-11.763-36.672-23.25-11.487-11.171-19.617-23.013-23.251-36.672a8.84 8.84 0 0 1 3.04-9.276l8.605-6.79z">
+										</path>
+										<path
+											d="m85.054 73.5-1 .641 17.126 17.123.375-.475a5.5 5.5 0 0 0 -.434-7.3l-9.237-9.237a5.493 5.493 0 0 0 -6.83-.752z">
+										</path>
+										<path
+											d="m37.212 26.445-.475.375 17.123 17.125.641-1a5.493 5.493 0 0 0 -.75-6.829l-9.237-9.237a5.5 5.5 0 0 0 -7.302-.434z">
+										</path>
+									</g>
+								</svg></span> <span class="phone-square" onclick="location.href='sms:01024074486'"><svg version="1.1" id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"
+									style="width: 16px; fill: rgb(206, 131, 131);">
+									<g>
+										<g>
+											<path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121
+			C512,114.073,510.297,107.588,507.49,101.721z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51
+			C480.412,77.703,473.927,76,467,76z"></path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path
+												d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z">
+											</path>
+										</g>
+									</g>
+									<g>
+										<g>
+											<path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49
+			C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"></path>
+										</g>
+									</g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+									<g></g>
+								</svg></span></div>
+					</div>
+				</div>
+			</div>
+		</div> <!---->
+	</div>
+    <script>
+        //연락하기 버튼 클릭 기능
+        function fnClickCalling(telephone) {
+            console.log("연락하기");
+
+            document.location.href = 'tel:' + telephone;
+        }
+    </script>
+</body>
+
+</html>

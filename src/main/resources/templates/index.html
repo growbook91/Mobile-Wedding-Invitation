@@ -94,7 +94,7 @@
             </div>
 
             <div><!--연락하기 버튼 1--></div>
-            <button onclick="fnClickCalling()" class="m-button">연락하기</button>
+            <button onclick="openModal('contact')" class="m-button">연락하기</button>
 
 
 
@@ -403,13 +403,13 @@
 
                                         <div id="ntab-item-1" class="content ntab-panel"
                                             style="left: 318.219px; position: absolute;">
-                                            <div class="text">식사는 결혼식 및 사진 촬영이 끝난 후<br>웨딩홀 지하 1층에서 뷔페식으로 진행됩니다.<p></p>부족함
+                                            <div class="text">식사는 결혼식 및 사진 촬영이 끝난 후<br>웨딩홀 지하1층에서 뷔페식으로 진행됩니다.<p></p>부족함
                                                 없이 즐기실 수 있도록<br>한식을 비롯해 중식, 양식, 일식 등<br>다양한 메뉴가 준비되어 있습니다.</div>
                                         </div>
 
                                         <div id="ntab-item-2" class="content ntab-panel"
                                             style="left: 636.438px; position: absolute;">
-                                            <div class="text">웨딩홀 지상 1층~지하 4층에 <br>2시간 무료주차가 가능합니다.<p></p><br>주차권 없이 <span class="c-bold"><u>자동으로</u></span><br> 차량번호가 인식됩니다.</div>
+                                            <div class="text">웨딩홀 지상 1층~지하 4층에 <br>2시간 무료주차가 가능합니다.<p></p>주차권 없이 <span class="c-bold"><u>자동으로</u></span><br> 차량번호가 인식됩니다.</div>
                                         </div>
 
                                     </div>
@@ -706,12 +706,7 @@
 
         slideUpList.forEach(el => upwardObserver.observe(el));
 
-        //연락하기 버튼 클릭 기능
-        function fnClickCalling() {
-            console.log("연락하기");
 
-            document.location.href = 'tel:01056318638';
-        }
 
         //사진 더 보기 클릭 기능
         $(".gallery-more-button").click(function () {

@@ -820,7 +820,7 @@ td {
 
 /*모달 창 css*/
 /** 공통 속성 설정 */
-* { padding: 0; margin: 0; }
+* { padding: 0; }
 ul { list-style: none; }
 .pull-left { float: left; }
 .clearfix:after { content: ''; display: block; clear: both; float: none; }
