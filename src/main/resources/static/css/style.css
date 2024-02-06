@@ -418,6 +418,14 @@ td {
     /* white-space: pre-wrap; */
 }
 
+.waytocome-wrap .content p {
+  margin-block-end: .7rem;
+  margin-block-start: .7rem;
+}
+.waytocome-wrap .content .bus-info {
+  color:#817e7e;
+}
+
 .map-inner {
     overflow: hidden;
 }
