@@ -2,7 +2,6 @@
 $(window).load(function(){
 
     var popup_cookie = getCookie('popup_cook');
-    console.log("팝업 확인",popup_cookie);
 
     if(!popup_cookie){
         openModal("attendance");
@@ -104,5 +103,41 @@ function resizeIframe(obj) {
     $('#front').css('width', obj.style.width);
 }
 
+//사진 클릭시 팝업
+function clickPhoto(num){
 
+     $("#background").fadeIn(50);  //배경 레이어
+     $("#front").fadeIn(50);  //이미지 레이어
+     $("#front").addClass("front_width");
+
+     let imgHtml = '<img id="img_popup" style="width:100%;" src="/images/gallery_photo'+num+'.jpg" class="img-blur">'; //이미지 태그 구성
+     imgHtml += `<div class="arrow-btn-l" onclick="clickArrow('l')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></i></div>`;
+     imgHtml += `<div class="arrow-btn-r" onclick="clickArrow('r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></div>`;
+     imgHtml += `<div class="pop-close-btn" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>`;
+     $('#front').html(imgHtml);
+}
+
+//좌우 클릭
+function clickArrow(side){
+
+    // ='http://localhost:8080/images/gallery_photo2.jpg'
+    let img_src = $("#img_popup")[0].src
+    let img_num = img_src.split("photo")[1].split(".jpg")[0];
+
+    let new_img_num = 1;
+    let total_img_num = $(".gallery-square .item").length;
+    if(side == "r"){
+        new_img_num = parseInt(img_num) + 1
+        if(new_img_num >= total_img_num){
+            new_img_num = 1;
+        }
+    }else{ //l
+        new_img_num = parseInt(img_num) - 1
+        if(new_img_num == 0){
+            new_img_num = total_img_num;
+        }
+    }
+    $("#img_popup")[0].src = img_src.replace("_photo"+img_num, "_photo"+new_img_num);
+
+}
 

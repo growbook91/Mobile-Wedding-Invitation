@@ -41,4 +41,11 @@ public class AttendanceController {
         attendanceService.writeAttendance(attendance);
         return "blank";
     }
+
+    //그냥 팝업 화면 여기에 하나 추가
+    @GetMapping(value = "/attendance/imgPopup")
+    public String imgPopup()
+    {
+        return "attendance/attendancePopup";
+    }
 }

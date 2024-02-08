@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/attendance.css">
+
+<body>
+<div class="v--modal-box v--modal popup-dialog" style="top: 531px; left: 58px;">
+    <div onselectstart="return false" class="popup-modal-wrap">
+        <div class="btn-close" onclick="parent.window.closeModal();">
+            <span class="icon">
+                <svg width="15px" height="15px" viewBox="0 0 15 15" fill="black" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z"></path>
+                </svg>
+            </span>
+        </div>
+        <div class="popup-modal-inner"><div class="title">참석 의사 전달</div>
+            <div class="content">축하의 마음으로 참석해주시는<br>모든 분들을 귀하게 모실 수 있도록<br>참석 의사를 전달 부탁드립니다.</div>
+            <div class="info gothic"><div><div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/hearts.png"></div>
+                <div style="font-weight: bold;">신랑 <span class="boy_full_name"></span> &amp; 신부 <span class="girl_full_name"></span></div>
+            </div>
+                <div>
+                    <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/calendar--v1.png"></div> <div><span>2024년</span>6월 11 토요일 오후 12시 30분</div></div>
+                <div>
+                    <div><img src="https://img.icons8.com/fluency-systems-regular/48/000000/place-marker--v1.png"></div>
+                    <div><span>한국기독교연합회관 3층 아가페홀</span></div></div></div> <div class="btn-submit gothic" onclick="location.href='/attendance/new'">참석 의사 전달하기</div>
+            <div class="skip-today gothic"><div class="check"></div> <div onclick="fnCloseDay();">오늘 하루 보지 않기</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/modal.js"></script>
+<script>
+    //초기 설정
+    var girl_full_name = "이지혜";
+    var boy_full_name = "이강민";
+
+    $(window).load(function () {
+      console.log("temporary function on attendancePopup.html is executed");
+      $(".boy_full_name").text(boy_full_name);
+      $(".girl_full_name").text(girl_full_name);
+    });
+</script>
+</body>
+
+</html>
