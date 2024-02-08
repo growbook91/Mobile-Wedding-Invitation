@@ -128,7 +128,7 @@ function clickArrow(side){
     let total_img_num = $(".gallery-square .item").length;
     if(side == "r"){
         new_img_num = parseInt(img_num) + 1
-        if(new_img_num >= total_img_num){
+        if(new_img_num > total_img_num){
             new_img_num = 1;
         }
     }else{ //l
