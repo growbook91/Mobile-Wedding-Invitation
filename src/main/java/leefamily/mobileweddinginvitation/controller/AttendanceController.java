@@ -39,7 +39,13 @@ public class AttendanceController {
         attendance.setCompanionName(form.getCompanionName());
         attendance.setFood(form.getFood());
         attendanceService.writeAttendance(attendance);
+
         return "blank";
     }
+
+    // 여기에 validation하는 함수를 하나 더 생성한다.
+    // 그래서 통과하면 블랭크 아니면 attendanc/new로 다시 돌아간다.
+    // 노놉 내가 하려는 방식은 다음 걸로 넘어갈 때 data를 넘겨주는 방식인듯..?
+
 
 }
