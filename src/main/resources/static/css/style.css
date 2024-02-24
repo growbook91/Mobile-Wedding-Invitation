@@ -533,6 +533,7 @@ td {
     line-height: 1.6rem;
 }
 
+
 .c-account {
     max-width: 100%;
     margin: 2rem auto 0;
@@ -546,6 +547,15 @@ td {
 .c-account .text:last-child {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+}
+
+.c-account .text {
+    position: relative;
+    overflow: hidden;
+    transition: .5s ease-out;
+    font-size: min(.85rem,16px);
+    border: 1px solid var(--border-light-color);
+    margin-top: -1px;
 }
 
 .c-account .item {
@@ -586,6 +596,22 @@ td {
     letter-spacing: 0;
     text-align: left;
     background: var(--fourth-bg-color);
+}
+
+.c-account .btn-action {
+    position: absolute;
+    top: calc(0.75rem - 1px);
+    right: 0.75rem;
+    width: 54px;
+    cursor: pointer;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #e1e1e1;
+    color: #333;
+    letter-spacing: .5px;
+    text-align: center;
+    line-height: 24px;
 }
 
 /* account wrap */

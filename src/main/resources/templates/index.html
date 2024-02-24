@@ -445,8 +445,8 @@
                     <div>참석이 어려우신 분들을 위해<br>계좌번호를 기재하였습니다.<br>너그러운 마음으로 양해 부탁드립니다.</div>
                 </div>
                 <div class="c-account to-fade-in">
-                    <div class="item">
-                        <div class="title">
+                    <div class="item" >
+                        <div class="title accountTitle">
                             <div>
                                 신랑측 계좌번호
                             </div>
@@ -457,28 +457,11 @@
                                 </svg></div>
                         </div>
                         <div class="text gothic" style="height: 0px; display: none;">
-                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
-                                <span>최재만</span>
+                            <div class="inner"><span><span class="bank">카카오뱅크</span> <span>3333-21-9868794</span></span><br>
+                                <span>이강민</span>
                             </div>
                             <div>
-                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
-                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
-                                        style="font-size: 2.88em;">
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
-                                        </path>
-                                    </svg>
-                                    복사
-                                </div> <!---->
-                            </div>
-                        </div>
-                        <div class="text gothic" style="height: 0px; display: none;">
-                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
-                                <span>최도현</span>
-                            </div>
-                            <div>
-                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                <div class="btn-action" onclick="copyText('3333219868794')"><svg aria-hidden="true" width="46.08" height="46.08"
                                         viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
                                         style="font-size: 2.88em;">
                                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -492,7 +475,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="title">
+                        <div class="title accountTitle">
                             <div>
                                 신부측 계좌번호
                             </div>
@@ -503,10 +486,10 @@
                                 </svg></div>
                         </div>
                         <div class="text gothic" style="display: none;">
-                            <div class="inner"><span><span class="bank">국민</span>
-                                    <span>200123-45-678900</span></span><br> <span>이하나</span></div>
+                            <div class="inner"><span><span class="bank">카카오뱅크</span>
+                                    <span>3333-11-8144804</span></span><br> <span>이지혜</span></div>
                             <div>
-                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
+                                <div class="btn-action" onclick="copyText('3333118144804')"><svg aria-hidden="true" width="46.08" height="46.08"
                                         viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
                                         style="font-size: 2.88em;">
                                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -516,25 +499,6 @@
                                     </svg>
                                     복사
                                 </div>
-                                <div class="btn-action kakaopay"><img src="/mcard/assets/images/icon-kakaopay.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text gothic" style="display: none;">
-                            <div class="inner"><span><span class="bank">신한</span> <span>110-123-456789</span></span><br>
-                                <span>이승태</span>
-                            </div>
-                            <div>
-                                <div class="btn-action"><svg aria-hidden="true" width="46.08" height="46.08"
-                                        viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
-                                        style="font-size: 2.88em;">
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
-                                        </path>
-                                    </svg>
-                                    복사
-                                </div> <!---->
                             </div>
                         </div>
                     </div>
@@ -717,7 +681,7 @@
         });
 
         //예식정보 및 안내사항
-        $(".title").click(function () {
+        $(".notice-tab-wrap .title").click(function () {
 
             $(".titles .title").removeAttr("active");
             this.setAttribute('active', true);
@@ -794,6 +758,50 @@
                 coordType: 'wgs84',
             });
         }
+
+        // 계좌번호 확장 버튼
+        $(".accountItem").click(function(){
+            var active = this.getAttribute('active');
+            if(active != "true"){
+                this.setAttribute('active', true);
+                $(this).children(".text").css("height", "78px");
+                $(this).children(".text").css("display", "block");
+            }
+            else{
+                this.setAttribute('active', false);
+                $(this).children(".text").css("height", "0px");
+                $(this).children(".text").css("display", "none");
+            }
+        });
+
+        $(".accountTitle").click(function(){
+            var active = this.getAttribute('active');
+            console.log('Current active value:', active);
+            if(active != 'true'){
+                this.setAttribute('active', true);
+                $(this).siblings().css("height", "78px");
+                $(this).siblings().css("display", "block");
+                $(this).children(".arrow").css("transform", "rotate(180deg)");
+            }
+            else{
+                this.setAttribute('active', false);
+                $(this).siblings().css("height", "0px");
+                $(this).siblings().css("display", "none");
+                $(this).children(".arrow").css("transform", "rotate(0deg)");
+            }
+        });
+
+        async function copyText(accountInfo){
+            console.log('copyText() 실행됨');
+
+            try {
+                await navigator.clipboard.writeText(accountInfo);
+            } catch (error) {
+                console.error(error.message);
+            }
+            alert('계좌번호(' + accountInfo + ')가 복사되었습니다.\n필요한 곳에 붙여넣기 하세요.');
+        }
+
 
 
     </script>
