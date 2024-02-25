@@ -29,13 +29,13 @@ public class CommentController {
         model.addAttribute("comments", comments);
         return "index";
     }
-    @GetMapping(value = "/comment/new")
+    @GetMapping(value = "/comment")
     public String createForm() {
         return "comment/createCommentForm";
     }
 
     // 댓글 생성하는 것
-    @PostMapping(value = "/comment/new")
+    @PostMapping(value = "/comment")
     public String create(CommentForm form) {
         // FIXME : 얘도...흠...어떻게 parameter를 넣어주는 거지..?
         Comment comment = new Comment();
@@ -45,6 +45,7 @@ public class CommentController {
         commentService.writeComment(comment);
         return "blank";
     }
+
     // 삭제하는 것
     // get으로 먼저 삭제 페이지를 보여줘야 하네.
     @GetMapping(value = "/comment/{id}")
