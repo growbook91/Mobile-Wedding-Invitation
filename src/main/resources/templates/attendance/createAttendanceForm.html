@@ -220,11 +220,11 @@
                         </tr> <!---->
                         <tr>
                             <th>성함<!----></th>
-                            <td><input type="text" name="name" maxlength="12" placeholder=""></td>
+                            <td><input type="text" name="name" maxlength="12" placeholder="" required></td>
                         </tr> <!---->
                         <tr>
                             <th>참석인원<!----></th>
-                            <td><input type="number" name="totalNum" placeholder="본인 포함 총 참석인원" min="1" max="100" pattern="[0-9]*"></td>
+                            <td><input type="number" name="totalNum" placeholder="본인 포함 총 참석인원" min="1" max="100" pattern="[0-9]*" required></td>
                         </tr>
                         <tr>
                             <th>동행인</th>
@@ -286,10 +286,8 @@
                 $label.css('checked', false);
         });
     });
-    </script>
-</body>
-<script>
-    /* Checkbox change event */
+
+        /* Checkbox change event */
 $('input[name="side"]').change(function() {
     // 모든 radio를 순회한다.
     $('input[name="side"]').each(function() {
@@ -322,5 +320,9 @@ $('input[name="food"]').change(function() {
             $label.css('checked', false);
     });
 });
+    </script>
+</body>
+<script>
+
 </script>
 </html>

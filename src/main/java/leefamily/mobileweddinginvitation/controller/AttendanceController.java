@@ -32,6 +32,7 @@ public class AttendanceController {
     // 참석 여부 조사
     @PostMapping(value = "/attendance/new")
     public String create(AttendanceForm form) {
+        //AttendanceForm을 그냥 attendance로 해도 될 것 같은데 나중에 수정하자.
         Attendance attendance = new Attendance();
         attendance.setSide(form.getSide());
         attendance.setName(form.getName());
