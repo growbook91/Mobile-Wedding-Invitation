@@ -51,10 +51,12 @@ public class CommentController {
     @GetMapping(value = "/comment/{id}")
     public String deleteForm(Model model, @PathVariable Integer id){
         model.addAttribute("id", id);
-//        System.out.println("okok");
         return "comment/deleteCommentForm";
     }
 
+    //여기서는 delete를 쓰는 게 맞을 것 같은데
+    // form이 post와 get만 받아서 불가
+    // form 말고는 못하나..? AJAX를 쓸까?
     @PostMapping(value = "/comment/{id}")
     public String delete(CommentForm form,@PathVariable Long id){
         System.out.println("okok");
