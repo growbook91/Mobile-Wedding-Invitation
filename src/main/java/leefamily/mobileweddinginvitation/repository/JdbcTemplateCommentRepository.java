@@ -1,19 +1,23 @@
 package leefamily.mobileweddinginvitation.repository;
 
 import leefamily.mobileweddinginvitation.domain.Comment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+@Repository
 public class JdbcTemplateCommentRepository implements CommentRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public JdbcTemplateCommentRepository(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }

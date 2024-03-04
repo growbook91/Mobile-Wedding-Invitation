@@ -4,10 +4,15 @@ import leefamily.mobileweddinginvitation.domain.Attendance;
 import leefamily.mobileweddinginvitation.domain.Comment;
 import leefamily.mobileweddinginvitation.repository.AttendanceRepository;
 import leefamily.mobileweddinginvitation.repository.CommentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AttendanceService {
 
     private final AttendanceRepository attendanceRepository;
+
+    @Autowired
     public AttendanceService(AttendanceRepository attendanceRepository){
         this.attendanceRepository = attendanceRepository;
     }

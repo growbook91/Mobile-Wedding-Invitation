@@ -11,29 +11,29 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class SpringConfig {
     private final DataSource dataSource;
     public SpringConfig(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-    @Bean
+//    @Bean
     public CommentService commentService() {
         return new CommentService(commentRepository());
     }
 
-    @Bean
+//    @Bean
     public CommentRepository commentRepository() {
 //        return new MemoryCommentRepository();
         return new JdbcTemplateCommentRepository(dataSource);
     }
 
-    @Bean
+//    @Bean
     public AttendanceService attendanceService() {
         return new AttendanceService(attendanceRepository());
     }
 
-    @Bean
+//    @Bean
     public AttendanceRepository attendanceRepository() {
 //        return new MemoryCommentRepository();
         return new AttendanceRepository(dataSource);
