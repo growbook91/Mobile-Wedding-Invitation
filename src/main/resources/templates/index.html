@@ -844,11 +844,28 @@
             console.log('copyText() 실행됨');
 
             try {
-                await navigator.clipboard.writeText(accountInfo);
+                // await navigator.clipboard.writeText(accountInfo);
+                var tempInput = document.createElement("input");
+                tempInput.value = accountInfo;
+                // Append the input element to the document
+                  document.body.appendChild(tempInput);
+
+                  // Select the text inside the input element
+                  tempInput.select();
+                  tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+                  // Copy the text to the clipboard
+                  document.execCommand("copy");
+
+                  // Remove the temporary input element
+                  document.body.removeChild(tempInput);
+
+                  // Provide some feedback to the user (optional)
+                  alert('계좌번호(' + accountInfo + ')가 복사되었습니다.\n필요한 곳에 붙여넣기 하세요.');
             } catch (error) {
                 console.error(error.message);
             }
-            alert('계좌번호(' + accountInfo + ')가 복사되었습니다.\n필요한 곳에 붙여넣기 하세요.');
+
         }
 
 
