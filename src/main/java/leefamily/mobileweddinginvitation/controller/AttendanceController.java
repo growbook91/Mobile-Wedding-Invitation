@@ -44,8 +44,8 @@ public class AttendanceController {
         Cookie cookie = new Cookie("popupYN", "N");
         cookie.setDomain("kangminlovesjihye.ddns.net");
         cookie.setPath("/");
-        // 30초간 저장
-        cookie.setMaxAge(5*60);
+        // 5분간 저장
+        cookie.setMaxAge(5*60*60);
         response.addCookie(cookie);
 
         //blank로 가면 무슨 의미..?
