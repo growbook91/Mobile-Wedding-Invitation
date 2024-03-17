@@ -2,6 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이강민 ♥ 이지혜 결혼합니다">
+    <meta property="og:url" content="http://kangminlovesjihye.ddns.net/">
+    <meta property="og:description" content="6월 1일 오후 12시반 한국기독교연합회관 3층 아가페홀">
+    <meta property="og:image" content="http://kangminlovesjihye.ddns.net/images/main_photo.jpg">
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
@@ -228,39 +233,39 @@
                 <div class="gallery-square">
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(1)"></div>
-                        <img src="/images/gallery_preview1.jpg" class="img-blur">
+                        <img src="/images/gallery_photo1.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(2)"></div>
-                        <img src="/images/gallery_preview2.jpg" class="img-blur">
+                        <img src="/images/gallery_photo2.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(3)"></div>
-                        <img src="/images/gallery_preview3.jpg" class="img-blur">
+                        <img src="/images/gallery_photo3.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(4)"></div>
-                        <img src="/images/gallery_preview4.jpg" class="img-blur">
+                        <img src="/images/gallery_photo4.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(5)"></div>
-                        <img src="/images/gallery_preview5.jpg" class="img-blur">
+                        <img src="/images/gallery_photo5.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(6)"></div>
-                        <img src="/images/gallery_preview6.jpg" class="img-blur">
+                        <img src="/images/gallery_photo6.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(7)"></div>
-                        <img src="/images/gallery_preview7.jpg" class="img-blur">
+                        <img src="/images/gallery_photo7.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(8)"></div>
-                        <img src="/images/gallery_preview8.jpg" class="img-blur">
+                        <img src="/images/gallery_photo8.jpg" class="img-blur">
                     </div>
                     <div class="item">
                         <div class="ph" style="z-index:9;" onclick="clickPhoto(9)"></div>
-                        <img src="/images/gallery_preview9.jpg" class="img-blur">
+                        <img src="/images/gallery_photo9.jpg" class="img-blur">
                     </div>
 
                     <div class="gallery-more-button-wrap">
@@ -273,15 +278,15 @@
                     <div id="add-3img" class="display-none">
                         <div class="item">
                             <div class="ph" style="z-index:9;" onclick="clickPhoto(10)"></div>
-                            <img src="/images/gallery_preview10.jpg" class="img-blur">
+                            <img src="/images/gallery_photo10.jpg" class="img-blur">
                         </div>
                         <div class="item">
                             <div class="ph" style="z-index:9;" onclick="clickPhoto(11)"></div>
-                            <img src="/images/gallery_preview11.jpg" class="img-blur">
+                            <img src="/images/gallery_photo11.jpg" class="img-blur">
                         </div>
                         <div class="item">
                             <div class="ph" style="z-index:9;" onclick="clickPhoto(12)"></div>
-                            <img src="/images/gallery_preview12.jpg" class="img-blur">
+                            <img src="/images/gallery_photo12.jpg" class="img-blur">
                         </div>
                     </div>
                 </div>
@@ -781,7 +786,7 @@
                 window.location.href = 'nmap' + url;
 
                 setTimeout(function () {
-                    if (+new Date() - clickedAt < 2000) {
+                    if (+new Date() - clickedAt < 1500) {
                         window.location.href = 'http://itunes.apple.com/app/id311867728?mt=8';
                     }
                 }, 1500);
@@ -794,9 +799,7 @@
         //FIXME : 여기 고쳐야 함.
         // Tmap open
         function openTMapApp() {
-            window.location.href='https://apis.openapi.sk.com/tmap/app/\
-            routes?appKey=Ygg0ufgp1U7T81XufFB7g1zh56C1sSjdaZFvncKa&name=한국기독교연합회관&lon=127.0009225&lat=37.572892\
-            ';
+            window.location.href='https://apis.openapi.sk.com/tmap/app/routes?appKey=Ygg0ufgp1U7T81XufFB7g1zh56C1sSjdaZFvncKa&name=한국기독교연합회관&lon=127.0009225&lat=37.572892';
         }
         // 카카오 내비 open
         function openKakaoMapApp() {
