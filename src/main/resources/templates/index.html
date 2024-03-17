@@ -539,22 +539,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text gothic" style="display: none;">
-                            <div class="inner"><span><span class="bank">국민</span>
-                                    <span>009902-04-320497</span></span><br> <span>김명수</span></div>
-                            <div>
-                                <div class="btn-action" onclick="copyText('국민 00990204320497')"><svg aria-hidden="true" width="46.08" height="46.08"
-                                                                                                       viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
-                                                                                                       style="font-size: 2.88em;">
-                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                    <path
-                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
-                                    </path>
-                                </svg>
-                                    복사
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -572,8 +556,7 @@
                                 <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
                                         class="icon" th:commentId="${comment.id}"
                                         th:onclick="openModal('comment/' + this.getAttribute('commentId'))">
-                                        <!--FIXME : 나중에 ajax로 고치자-->
-                                        <!--                                |window.location.href='@{/comment/{id}(id=${comment.id})}'|-->
+
                                         <svg width="10px" height="10px" viewBox="0 0 15 15" fill="black"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
