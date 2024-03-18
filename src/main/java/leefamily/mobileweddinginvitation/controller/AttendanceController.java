@@ -6,6 +6,7 @@ import leefamily.mobileweddinginvitation.service.AttendanceService;
 import leefamily.mobileweddinginvitation.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -35,22 +36,16 @@ public class AttendanceController {
 
     // 참석 여부 조사
     @PostMapping(value = "/attendance/new")
-    public String create(AttendanceForm form, HttpServletResponse response) {
+    public String createAttendance(@ModelAttribute Attendance attendance, HttpServletResponse response) {
         //AttendanceForm을 그냥 attendance로 해도 될 것 같은데 나중에 수정하자.
-        Attendance attendance = new Attendance();
-        attendance.setSide(form.getSide());
-        attendance.setName(form.getName());
-        attendance.setTotalNum(form.getTotalNum());
-        attendance.setCompanionName(form.getCompanionName());
-        attendance.setFood(form.getFood());
         attendanceService.writeAttendance(attendance);
 
         // 참석에 대한 쿠키 생성
         Cookie cookie = new Cookie("popupYN", "N");
         cookie.setDomain("kangminlovesjihye.ddns.net");
         cookie.setPath("/");
-        // 30초간 저장
-        cookie.setMaxAge(5*60);
+        // 5분간 저장
+        cookie.setMaxAge(5*60*60);
         response.addCookie(cookie);
 
         //blank로 가면 무슨 의미..?

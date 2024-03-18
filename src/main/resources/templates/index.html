@@ -2,6 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이강민 ♥ 이지혜 결혼합니다">
+    <meta property="og:url" content="http://kangminlovesjihye.ddns.net/">
+    <meta property="og:description" content="6월 1일 오후 12시반 한국기독교연합회관 3층 아가페홀">
+    <meta property="og:image" content="http://kangminlovesjihye.ddns.net/images/main_photo.jpg">
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
@@ -387,7 +392,7 @@
                             <div class="title" tab-page="2"><span>식사안내</span></div>
                             <div class="title" tab-page="3"><span>주차안내</span></div>
                         </div>
-                        <div class="contents first-tab" style="height:340px;">
+                        <div class="contents first-tab" style="height:433px;">
                             <div style="height:100%;">
                                 <div class="ntab-viewport"
                                     style="position: relative; z-index: 100; overflow: hidden; min-height: 100%; width: 100%; touch-action: pan-y; user-select: none; -webkit-user-drag: none; height: 100%;">
@@ -396,7 +401,7 @@
                                         <div id="ntab-item-0" class="content ntab-panel"
                                             style="left: 0px; position: absolute;">
                                             <div class="img-wrap top" style="aspect-ratio: 1280 / 656;"><img
-                                                    style="width: 100%;" src="/images/camera.jpg"></div>
+                                                    style="width: 100%;" src="/images/photobooth.jpeg"></div>
                                             <div class="text">포토부스가 설치될 예정입니다.<br>귀한 발걸음 해주신 여러분의<br>환한 미소와 따뜻한 말씀
                                                 남겨주시면<br>소중히 간직하도록 하겠습니다.</div>
                                         </div>
@@ -534,22 +539,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text gothic" style="display: none;">
-                            <div class="inner"><span><span class="bank">국민</span>
-                                    <span>009902-04-320497</span></span><br> <span>김명수</span></div>
-                            <div>
-                                <div class="btn-action" onclick="copyText('국민 00990204320497')"><svg aria-hidden="true" width="46.08" height="46.08"
-                                                                                                       viewBox="0.48 0.48 23.04 23.04" fill="#222F3D" class="ov-icon"
-                                                                                                       style="font-size: 2.88em;">
-                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                    <path
-                                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z">
-                                    </path>
-                                </svg>
-                                    복사
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -567,8 +556,7 @@
                                 <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
                                         class="icon" th:commentId="${comment.id}"
                                         th:onclick="openModal('comment/' + this.getAttribute('commentId'))">
-                                        <!--FIXME : 나중에 ajax로 고치자-->
-                                        <!--                                |window.location.href='@{/comment/{id}(id=${comment.id})}'|-->
+
                                         <svg width="10px" height="10px" viewBox="0 0 15 15" fill="black"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -781,7 +769,7 @@
                 window.location.href = 'nmap' + url;
 
                 setTimeout(function () {
-                    if (+new Date() - clickedAt < 2000) {
+                    if (+new Date() - clickedAt < 1500) {
                         window.location.href = 'http://itunes.apple.com/app/id311867728?mt=8';
                     }
                 }, 1500);
@@ -794,9 +782,7 @@
         //FIXME : 여기 고쳐야 함.
         // Tmap open
         function openTMapApp() {
-            window.location.href='https://apis.openapi.sk.com/tmap/app/\
-            routes?appKey=Ygg0ufgp1U7T81XufFB7g1zh56C1sSjdaZFvncKa&name=한국기독교연합회관&lon=127.0009225&lat=37.572892\
-            ';
+            window.location.href='https://apis.openapi.sk.com/tmap/app/routes?appKey=Ygg0ufgp1U7T81XufFB7g1zh56C1sSjdaZFvncKa&name=한국기독교연합회관&lon=127.0009225&lat=37.572892';
         }
         // 카카오 내비 open
         function openKakaoMapApp() {

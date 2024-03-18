@@ -481,6 +481,10 @@ td {
     left: -1px;
     width: calc(100% + 2px);
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .gallery-more-button-wrap {
@@ -910,8 +914,8 @@ ul { list-style: none; }
 }
 
 .front_width{
-    height: 570px !important;
-    width: 422px !important;
+    height: 600px !important;
+    width: 400px !important;
     top: 38%;
     left: 48%;
 }
