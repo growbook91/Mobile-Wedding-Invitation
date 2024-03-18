@@ -556,13 +556,13 @@
 
             <div>
                 <div class="guestbook-wrap">
-                    <div class="m-title to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="m-title" style="opacity: 1; transform: translate(0px, 0px);">
                         <div class="greetings-title">
                             방명록
                         </div>
                     </div>
                     <div class="c-guestbook gothic">
-                        <div class="comments to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="comments" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="item" th:each="comment : ${comments}">
                                 <div class="close"><span class="date" th:text="${comment.date}">2023.03.22</span> <span
                                         class="icon" th:commentId="${comment.id}"
@@ -581,7 +581,7 @@
                             </div>
                             <!---->
                         </div>
-                        <div class="tools to-fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                        <div class="tools" style="opacity: 1; transform: translate(0px, 0px);">
                             <div class="pagination-wrap"><!----></div>
                             <div class="writing"><button class="m-button gothic" onclick="openModal('comment')">
                                     작성하기
